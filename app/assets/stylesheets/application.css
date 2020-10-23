@@ -20,6 +20,7 @@
  .wrapper {
    display: flex;
  }
+ 
 
  /* 右側 */
  .side-bar {
@@ -31,11 +32,39 @@
     height: 100px;
     background-color: #fffff9;
     padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .name p{
+    font-size: 22px;
+    color: #e29676;
+  }
+  .create-chat {
+    padding: 10px;
+    border: 1px solid #e6bfb2;
+    border-radius: 30px;
+  }
+  .create-chat a{
+    color: burlywood;
+    text-decoration: none;
+    font-size: 15px;
   }
   .rooms{
     height: calc(100vh - 100px);
     padding: 0 20px;
+    overflow: scroll;
+  }
+  .room{
+    padding: 20px 0px 40px; 
+  }
+  .room-name a{
+    text-decoration: none;
+    color:  burlywood;
+    font-size: 17px;
+    
  }
+
 
  /* 左側 */
  .main{
