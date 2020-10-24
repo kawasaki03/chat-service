@@ -13,3 +13,190 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+   box-sizing: border-box;
+ }
+ .wrapper {
+   display: flex;
+ }
+ 
+
+ /* 左側 */
+ .side-bar {
+   width: 300px;
+   height: 100vh;
+   background-color: #fef9fb;
+   background-color: #ebf6f7;
+  }
+  .side-bar-header{
+    height: 100px;
+    background-color: #fffff9;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .name p{
+    font-size: 22px;
+    color: #e29676;
+  }
+  .create-chat {
+    padding: 10px;
+    border: 1px solid #e6bfb2;
+    border-radius: 30px;
+  }
+  .create-chat a{
+    color: burlywood;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .rooms{
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+    overflow: scroll;
+  }
+  .room{
+    padding: 20px 0px 40px; 
+  }
+  .room-name a{
+    text-decoration: none;
+    color:  burlywood;
+    font-size: 17px;
+    
+ }
+
+
+ /* 右側 */
+ .main{
+   /* background-color: #bee0c2; */
+   background-color: #f0f6da;
+  width: calc(100vw - 300px);
+}
+.chat-header{
+  padding: 0 40px;
+   height: 100px;
+   display:flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+ .delete-chat{
+   padding: 10px;
+   border: 1px solid burlywood;
+   border-radius: 30px;
+
+ }
+ .delete-chat a{
+    text-decoration: none;
+    color: #e29676;
+ }
+
+ .chat-title {
+   color: #e29676;
+   font-size: 24px;
+  
+ }
+ 
+ .messages{
+   height: calc(100vh - 190px);
+   background-color:#fffff9;
+   padding: 46px 40px 0;
+   overflow: scroll;
+ }
+ .message-wrapper{
+   display: inline-block;
+   width:100%;
+   margin-bottom: 20px;
+  }
+ 
+ .my-message{
+   float: right;
+ }
+ .your-message{
+   float: left;
+ }
+ .my-name-date{
+   display: flex;
+   color: silver;
+   justify-content: flex-end;
+ }
+ .your-name-date{
+   display: flex;
+   color: silver;
+   
+ }
+ .name{
+   font-size: 14px;
+ }
+ .date{
+   margin-left: 5px;
+   font-size: 12px;
+ }
+ .text p{
+   display: inline-block;
+   padding: 10px 10px;
+   border-radius: 10px;
+   background-color: #bee0c2;
+   font-size: 16px;
+ }
+
+
+ .form{
+   background-color: #cbb994;
+   height:90px;
+   padding: 20px 40px;
+   display: flex;
+ }
+ .form-input{
+   width: 100%;
+   display: flex;
+   background-color: white;
+   border: 2px solid #7b5544;
+  border-radius: 15px;
+ }
+ .form-message{
+  padding: 10px 10px;
+  width: 100%;
+  border:none;
+  /* /* border: 2px solid #7b5544; */
+  border-radius: 15px;
+ }
+
+ .form-message:focus{
+  outline: none;
+  border-radius: 15px;
+}
+
+.form-input:focus-within{
+  border: 2px solid #d89b7f;
+
+ }
+
+ .form-submit{
+   height: 50px;
+   margin-left: 15px;
+   padding: 0 20px;
+   border: 2px solid #7b5544;
+   border-radius: 15px;
+ }
+ .form-submit:focus{
+  outline: none;
+  border: 2px solid #d89b7f;
+  border-radius: 15px;
+ }
+
+ .form-image {
+  font-size: 12px;
+  border-radius: 10px;
+  background-color: #7b5544;
+  color: white;
+  padding: 9px 0;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+ 
