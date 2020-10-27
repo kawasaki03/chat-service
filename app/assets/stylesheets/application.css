@@ -37,8 +37,9 @@
     align-items: center;
     justify-content: space-between;
   }
-  .name p{
-    font-size: 22px;
+  .current-user-name{
+    text-decoration: none;
+    font-size: 20px;
     color: #e29676;
   }
   .create-chat {
