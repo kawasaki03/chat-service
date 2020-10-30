@@ -1,11 +1,14 @@
 <div class="main">
   <div class="chat-header">
     <div class="left-header">
-      <div class="chat-title">ルーム３</div>
+      <div class="chat-title">
+      <%= @room.name%>
+      </div>
     </div>
     <div class="right-header">
       <div class="delete-chat">
         <a href= "#">チャットを削除する</a>
+        <%=link_to("チャットを削除する",room_path(@room.id), method: :delete)%>
       </div>
     </div>
   </div>
