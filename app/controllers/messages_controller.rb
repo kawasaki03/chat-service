@@ -2,7 +2,9 @@ class MessagesController < ApplicationController
   def index
     @room = Room.find(params[:room_id])
     @message = Message.new
+    @messages = @room.messages.includes(:user)
   end
+
 
   # 修正必要かも
   def create

@@ -11,51 +11,7 @@
   </div>
 
   <div class="messages">
-    <div class="message-wrapper">
-     <div class="my-message">
-      <div class="my-name-date">
-        <div class="name">
-          川﨑
-        </div>
-        <div class="date">
-          2020/10/1(水)12:00
-        </div>
-      </div>
-      <div class="text">
-        <p>おはようございます</p>
-      </div>
-    </div>
-    </div>
-    <div class="message-wrapper">
-    <div class="your-message">
-      <div class="your-name-date">
-        <div class="name">
-          山田
-        </div>
-        <div class="date">
-          2020/10/1(水)12:00
-        </div>
-      </div>
-      <div class="text">
-        <p>こんにちは</p>
-      </div>
-    </div>
-  </div>
-  <div class="message-wrapper">
-     <div class="my-message">
-      <div class="my-name-date">
-        <div class="name">
-          川﨑
-        </div>
-        <div class="date">
-          2020/10/1(水)12:00
-        </div>
-      </div>
-      <div class="text">
-        <p>おはようございます</p>
-      </div>
-    </div>
-    </div>
+      <%=render partial: 'message', collection: @messages%>
   </div>
 
  <%=form_with model:[@room,@message], class:"form",local: true do |f|%>
