@@ -110,38 +110,49 @@
    margin-bottom: 20px;
   }
  
- .my-message{
-   float: right;
- }
- .your-message{
+  .my-message{
+    float: right;
+  }
+  .my-message .text{
+    float: right;
+  }
+  .your-message{
    float: left;
- }
- .my-name-date{
-   display: flex;
-   color: silver;
-   justify-content: flex-end;
- }
- .your-name-date{
-   display: flex;
-   color: silver;
-   
- }
- .name{
-   font-size: 14px;
- }
- .date{
-   margin-left: 5px;
-   font-size: 12px;
- }
- .text p{
-   display: inline-block;
-   padding: 10px 10px;
-   border-radius: 10px;
-   background-color: #bee0c2;
-   font-size: 16px;
- }
-
-
+  }
+  .my-name-date{
+    display: flex;
+    color: silver;
+    justify-content: flex-end;
+  }
+  .your-name-date{
+    display: flex;
+    color: silver;
+    
+  }
+  .name{
+    font-size: 14px;
+  }
+  .date{
+    margin-left: 5px;
+    font-size: 12px;
+  }
+  .my-message .text p{
+    display: inline-block;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: #bee0c2;
+    font-size: 16px;
+  }
+  .your-message .text p{
+    display: inline-block;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: gainsboro;
+    font-size: 16px;
+  }
+  
+  
+  
  .form{
    background-color: #cbb994;
    height:90px;

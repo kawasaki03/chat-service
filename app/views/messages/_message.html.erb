@@ -1,0 +1,36 @@
+<%if current_user.id == message.user.id%>
+<div class="message-wrapper">
+     <div class="my-message">
+      <div class="my-name-date">
+        <div class="name">
+          <%=message.user.name%>
+        </div>
+        <div class="date">
+          <%=l message.created_at%>
+        </div>
+      </div>
+      <div class="text">
+        <p><%= message.content%></p>
+      </div>
+    </div>
+    </div>
+
+<%else%>
+    <div class="message-wrapper">
+    <div class="your-message">
+      <div class="your-name-date">
+        <div class="name">
+          <%=message.user.name%>
+        </div>
+        <div class="date">
+          <%=l message.created_at%>
+        </div>
+      </div>
+      <div class="text">
+        <p><%=message.content%></p>
+      </div>
+    </div>
+  </div>
+  <%end%>
+
+  
