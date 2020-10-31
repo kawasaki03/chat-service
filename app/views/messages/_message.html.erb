@@ -12,7 +12,9 @@
       <div class="text">
         <p><%= message.content%></p>
       </div>
-       <%=image_tag message.image.variant(resize: '300x300'), class: 'message-image' if message.image.attached?%>
+      <div class='message-image'>
+       <%=image_tag message.image.variant(resize: '300x300'), class: 'message-img' if message.image.attached?%>
+       </div>
     </div>
     </div>
 
@@ -30,7 +32,9 @@
       <div class="text">
         <p><%=message.content%></p>
       </div>
-      <%=image_tag message.image.variant(resize: '300x300'), class: 'message-image' if message.image.attached?%>
+      <div class='message-image'>
+      <%=image_tag message.image.variant(resize: '300x300'), class: 'message-img' if message.image.attached?%>
+      </div>
     </div>
   </div>
   <%end%>
