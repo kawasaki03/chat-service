@@ -2,7 +2,7 @@
   <div class='account-page__inner '>
     <div class='account-page__header'>
       <h2>こねくと</h2>
-      <h5>新規アカウントの作成</h5>
+      <h5>講師用アカウントの作成</h5>
     </div>
     
        <%= devise_error_messages!%>
@@ -43,17 +43,6 @@
           </div>
         </div>
 
-     
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :admin,"講師名"%>
-          </div>
-          <div class='field-input'>
-            <%= f.collection_select :admin_id,Admin.all,:id,:name,{include_blank: "担当の講師名を選択してください"},{class:"select-admin"}%>
-          </div>
-        </div>
-     
-
         <div class='actions'>
           <%= f.submit "登録する", class: 'btn'%>
         </div>
@@ -62,7 +51,7 @@
   </div>
   <div class='account-page__inner '>
     <div class= "move-page">アカウントをお持ちですか？
-    <p>→<%=link_to "ログインする(先生)",new_admin_session_path%></p>
+    <p>→<%=link_to "ログインする(講師)",new_admin_session_path%></p>
     <p>→<%=link_to "ログインする(生徒)",new_user_session_path%></p>
     </div>
     </div>

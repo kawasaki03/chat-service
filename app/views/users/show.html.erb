@@ -1,0 +1,21 @@
+<div class='account-page' id='account-page'>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--left account-page__header'>
+      <h2>ようこそ、<%=current_user.name%>さん</h3>
+      
+  <div class='account-info'>
+      <h3>登録情報</h3>
+      <p>お名前：<%=current_user.name%></p>
+      <p>メールアドレス：<%=current_user.email%></p>
+
+      <%= link_to "編集", edit_user_path(id: params[:id]),class: 'btn'%>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: 'btn'%>
+    </div>
+
+    <div class="move-chat">
+    <%=link_to "チャットを始める", root_path%>
+    </div>
+     
+   
+  </div>
+</div>
