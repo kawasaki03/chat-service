@@ -1,0 +1,84 @@
+<%if admin_signed_in?%>
+<%if contact.is_user%>
+<div class="message-wrapper">
+    <div class="your-message">
+      <div class="your-name-date">
+        <div class="name"> 
+         <%=@admin_room.user.name%>
+        </div>
+        <div class="date"> 
+          <%=contact.created_at %>
+        </div>
+      </div>
+      <div class="text">
+        <p><%=contact.content%></p>
+      </div>
+      
+    </div>
+  </div>
+
+  <%else%>
+<div class="message-wrapper">
+     <div class="my-message">
+      <div class="my-name-date">
+        <div class="name">
+          
+          <%=@admin_room.admin.name%>
+        
+        </div>
+        <div class="date">
+          <%= contact.created_at%>
+        </div>
+      </div>
+      <div class="text">
+        <p><%= contact.content%></p>
+      </div>
+      
+    </div>
+    </div>
+  <%end%>
+
+  <%else%>
+  <%if contact.is_user%>
+  <div class="message-wrapper">
+     <div class="my-message">
+      <div class="my-name-date">
+        <div class="name">
+          
+          <%=@admin_room.user.name%>
+        
+        </div>
+        <div class="date">
+          <%= contact.created_at%>
+        </div>
+      </div>
+      <div class="text">
+        <p><%= contact.content%></p>
+      </div>
+      
+    </div>
+    </div>
+    <%else%>
+<div class="message-wrapper">
+    <div class="your-message">
+      <div class="your-name-date">
+        <div class="name"> 
+         <%=@admin_room.admin.name%>
+        </div>
+        <div class="date"> 
+          <%=contact.created_at %>
+        </div>
+      </div>
+      <div class="text">
+        <p><%=contact.content%></p>
+      </div>
+      
+    </div>
+  </div>
+
+  <%end%>
+  
+
+  <%end%>
+
+  

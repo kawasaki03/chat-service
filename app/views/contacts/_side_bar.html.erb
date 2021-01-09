@@ -1,0 +1,44 @@
+<div class="side-bar">
+<div class="side-bar-header">
+  <div class="name">
+    <%if admin_signed_in?%>
+      <%= link_to(current_admin.name,edit_admin_path(current_admin.id),class:"current-user-name")%>
+      <%elsif user_signed_in?%>
+      <%= link_to(current_user.name,edit_user_path(current_user.id),class:"current-user-name")%>
+      <%end%>
+  </div>
+  
+</div>
+ 
+
+<div class="rooms">
+ <%if admin_signed_in?%>
+   <% current_admin.admin_rooms.each do |room|%>
+    <div class="room">
+      <div class="room-name">
+        <%=link_to(room.name,admin_room_contacts_path(room.id))%>
+      </div>
+    </div>
+   <%end%>
+ <%elsif user_signed_in? %>
+    <% current_user.admin_rooms.each do |room|%>
+     <div class="room">
+        <div class="room-name">
+         <%=link_to(room.name,admin_room_contacts_path(room.id))%>
+        </div>
+     </div>
+    <%end%>
+  <%end%>
+
+</div>
+<div class= "chat-edit">
+  <div class="create-chat">
+    <%=link_to("チャット作成",new_admin_room_path)%>
+  </div>
+  <%if request.url.include?("contacts")%>
+  <div class="delete-chat">
+        <%=link_to("チャット削除",admin_room_path(@admin_room.id), method: :delete) %>
+      </div>
+        <%end%>
+</div>
+  </div>

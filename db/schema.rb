@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2020_12_13_034614) do
 
   create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
-    t.boolean "is_user?", null: false
+    t.boolean "is_user", default: false, null: false
     t.bigint "admin_room_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -7,9 +7,49 @@
    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+   <%if user_signed_in? %>
+  <div class="screen">
+     <div class = "header-bar">
+        <%=link_to user_path(current_user.id),class:"link-li" do%>
+         <i class="fas fa-home" > home</i>
+        <%end%>
+        <%=link_to edit_user_path(current_user.id),class:"link-li" do%>
+         <i class="fas fa-edit">edit</i>
+        <%end%>
+        <%=link_to rooms_path,class:"link-li" do%>
+        <i class="fas fa-comments"> students</i>
+        <%end%>
+        <%=link_to admin_rooms_path,class:"link-li" do%>
+        <i class="fas fa-comments"> teacher</i>
+        <%end%>
+     </div>
+     <div class= "wrap">
+        <%= yield %>
+     </div>
+  </div>
+  <%elsif admin_signed_in? %>
+  <div class="screen">
+     <div class = "header-bar">
+        <%=link_to admin_path(current_admin.id) do%>
+        <i class="fas fa-home"> home</i>
+        <%end%>
+        <%=link_to edit_admin_path(current_admin.id) do %>
+        <i class="fas fa-edit"> edit</i>
+        <%end%>
+        <%=link_to admin_rooms_path do%>
+        <i class="fas fa-comments"> teacher</i>
+        <%end%>
+     </div>
+     <div class= "wrap">
+        <%= yield %>
+     </div>
+  </div>
+  <%else%>
+  <%= yield %>
+   <%end %>
   </body>
 </html>

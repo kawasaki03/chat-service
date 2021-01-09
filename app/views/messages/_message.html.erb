@@ -9,9 +9,11 @@
           <%=l message.created_at%>
         </div>
       </div>
+      <%if message.content != ""%>
       <div class="text">
         <p><%= message.content%></p>
       </div>
+        <%end%>
       <div class='message-image'>
        <%=image_tag message.image.variant(resize: '300x300'), class: 'message-img' if message.image.attached?%>
        </div>
@@ -29,9 +31,11 @@
           <%=l message.created_at%>
         </div>
       </div>
+      <%if message.content != ""%>
       <div class="text">
         <p><%=message.content%></p>
       </div>
+      <%end%>
       <div class='message-image'>
       <%=image_tag message.image.variant(resize: '300x300'), class: 'message-img' if message.image.attached?%>
       </div>

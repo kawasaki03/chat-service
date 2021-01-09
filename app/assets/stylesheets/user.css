@@ -61,8 +61,10 @@
 }
 .select-admin{
   width: 100%;
-  font-size: 14px;
-
+  padding: 5px;
+  font-size: 13px;
+  letter-spacing:1px;
+  height: 40px;
 }
 .account-page .field .field-label {
   padding: 5px 0;
@@ -101,6 +103,11 @@
   color: #fff;
   background-color: #7b5544;
   border-radius: 10px;
+  box-shadow: 0px 5px 2px black;
+}
+.account-page input[type=submit]:hover{
+  box-shadow: none;
+  transform: translateY(2px);
 }
 .account-page .field-label .field_with_errors {
   display: inline-block;
