@@ -1,10 +1,10 @@
-<%if admin_signed_in?%>
-<%if contact.is_user%>
+<%if teacher_signed_in?%>
+<%if contact.is_student%>
 <div class="message-wrapper">
     <div class="your-message">
       <div class="your-name-date">
         <div class="name"> 
-         <%=@admin_room.user.name%>
+         <%=@teacher_room.student.name%>
         </div>
         <div class="date"> 
           <%=contact.created_at %>
@@ -13,7 +13,9 @@
       <div class="text">
         <p><%=contact.content%></p>
       </div>
-      
+      <div class='message-image'>
+      <%=image_tag contact.image.variant(resize: '300x300'), class: 'message-img' if contact.image.attached?%>
+      </div>
     </div>
   </div>
 
@@ -23,7 +25,7 @@
       <div class="my-name-date">
         <div class="name">
           
-          <%=@admin_room.admin.name%>
+          <%=@teacher_room.teacher.name%>
         
         </div>
         <div class="date">
@@ -33,19 +35,21 @@
       <div class="text">
         <p><%= contact.content%></p>
       </div>
-      
+      <div class='message-image'>
+      <%=image_tag contact.image.variant(resize: '300x300'), class: 'message-img' if contact.image.attached? %>
+      </div>
     </div>
     </div>
   <%end%>
 
   <%else%>
-  <%if contact.is_user%>
+  <%if contact.is_student%>
   <div class="message-wrapper">
      <div class="my-message">
       <div class="my-name-date">
         <div class="name">
           
-          <%=@admin_room.user.name%>
+          <%=@teacher_room.student.name%>
         
         </div>
         <div class="date">
@@ -55,7 +59,10 @@
       <div class="text">
         <p><%= contact.content%></p>
       </div>
-      
+      <div class='message-image'>
+      <%=image_tag contact.image.variant(resize: '300x300'), class: 'message-img' if contact.image.attached?%>
+      </div>
+
     </div>
     </div>
     <%else%>
@@ -63,7 +70,7 @@
     <div class="your-message">
       <div class="your-name-date">
         <div class="name"> 
-         <%=@admin_room.admin.name%>
+         <%=@teacher_room.teacher.name%>
         </div>
         <div class="date"> 
           <%=contact.created_at %>
@@ -72,7 +79,9 @@
       <div class="text">
         <p><%=contact.content%></p>
       </div>
-      
+      <div class='message-image'>
+      <%=image_tag contact.image.variant(resize: '300x300'), class: 'message-img' if contact.image.attached?%>
+      </div>
     </div>
   </div>
 

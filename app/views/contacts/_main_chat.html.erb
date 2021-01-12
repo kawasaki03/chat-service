@@ -2,7 +2,7 @@
   <div class="chat-header">
     <div class="left-header">
       <div class="chat-title">
-      <%= @admin_room.name%>
+      <%= @teacher_room.name%>
       </div>
     </div>
     <div class="right-header">
@@ -14,8 +14,12 @@
       <%=render partial: 'contact', collection: @contacts%>
   </div>
 
- <%=form_with model:[@admin_room,@contact], class:"form",local: true do |f|%>
+ <%=form_with model:[@teacher_room,@contact], class:"form",local: true do |f|%>
     <div class="form-input">
+    <label class="form-image">
+      <span class="image-file"><i class="fas fa-paperclip"></i></span>
+      <%= f.file_field :image, class:"hidden" %>
+      </label>
       <%= f.text_field :content, class:"form-message" , placeholder:"type a message"%>
       
     </div>

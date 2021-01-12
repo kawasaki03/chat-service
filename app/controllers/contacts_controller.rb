@@ -1,24 +1,25 @@
 class ContactsController < ApplicationController
   def index
-    @admin_room = AdminRoom.find(params[:admin_room_id])
+    @teacher_room = TeacherRoom.find(params[:teacher_room_id])
     @contact = Contact.new
-    @contacts = @admin_room.contacts
+    @contacts = @teacher_room.contacts
   end
 
 
   def create
-    @admin_room= AdminRoom.find(params[:admin_room_id])
+    binding.pry
+    @teacher_room= TeacherRoom.find(params[:teacher_room_id])
     @contact = Contact.new(contact_params)
-    if admin_signed_in?
-      @contact.is_user = false
-    elsif user_signed_in?
-      @contact.is_user = true
+    if teacher_signed_in?
+      @contact.is_student = false
+    elsif student_signed_in?
+      @contact.is_student = true
     end
-    @contact.admin_room_id = @admin_room.id
+    @contact.teacher_room_id = @teacher_room.id
 
    
     if @contact.save
-      redirect_to admin_room_contacts_path(params[:admin_room_id])
+      redirect_to teacher_room_contacts_path(params[:teacher_room_id])
     else
       render :index
     end
@@ -26,6 +27,6 @@ class ContactsController < ApplicationController
 
   private
   def contact_params    
-    params.require(:contact).permit(:content)
+    params.require(:contact).permit(:content,:image)
   end
 end

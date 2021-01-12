@@ -1,11 +1,11 @@
 <div class="side-bar">
  <div class="side-bar-header">
   <div class="name">
-    <%= link_to(current_user.name,edit_user_path(current_user.id),class:"current-user-name")%>
+    <div class= "current-chat-name"> <i class="fas fa-comments"> students</i></div>
   </div>
  </div>
  <div class="rooms">
- <% current_user.rooms.each do |room|%>
+ <% current_student.rooms.reverse.each do |room|%>
   <div class="room">
     <div class="room-name">
       <%=link_to(room.name,room_messages_path(room.id))%>

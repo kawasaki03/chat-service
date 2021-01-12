@@ -10,16 +10,23 @@
       </div>
     
    <div class="chat-room-form__field-center">
-    
-        <label class='chat-room-form__label'>メンバー</label>   
+        <div class='chat-room-form__member'>
+        メンバー
+        </div>   
          <div class='chat-room-form__field-select'>
-            <%User.where(admin_id: current_user.admin_id).where.not(id: current_user.id).each do |user|%>
+            <%Student.where(teacher_id: current_student.teacher_id).where.not(id: current_student.id).each do |student|%>
             <div class="chat-member">
-             <%=user.name %> 
-             <input type="checkbox" value=<%=user.id%> name= "room[user_ids][]"  > 
+             <input type="checkbox" value=<%=student.id%> name= "room[student_ids][]"  > 
+             <div class= "chat-member_image">
+             <%=image_tag student.image.variant(resize: '50x50')  if student.image.attached?%>
+             </div>
+             
+              <div class= "chat-member__name"><%=student.name %></div>
+              <div class= "chat-member__status_message"><%=student.status_message%> </div>
+             
              </div>
             <%end%>
-            <input name= "room[user_ids][]" type="hidden" value= <%= current_user.id%>>
+            <input name= "room[student_ids][]" type="hidden" value= <%= current_student.id%>>
         
     </div>
 

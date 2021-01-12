@@ -1,0 +1,48 @@
+
+<div class="wrapper">
+<div class='new-chat-room'>
+<div class= 'chat-room-form-title'>
+  <h1>新規チャットルーム</h1>
+</div>
+  <%=form_with model: @teacher_room, class: "chat-room-form",local: true do |f|%>
+      <div class='chat-room-form__field-top'>
+        <%= f.label :チャットルーム名, class: 'chat-room-form__label'%>
+        <%= f.text_field :name, class: 'chat-room_name', placeholder: 'チャットルーム名を入力してください'%>
+      </div>
+    
+   <div class="chat-room-form__field-center">
+    
+        <label class='chat-room-form__label'>メンバー</label>   
+         <div class='chat-room-form__field-select'>
+         <%if teacher_signed_in?%>
+            <%Student.where(teacher_id: current_teacher.id).each do |student|%>
+            <div class="chat-member">
+             <%=student.name %> 
+             <input type="checkbox" value=<%=student.id%> name= "teacher_room[student_id]"  > 
+             </div>
+            <%end%>
+            <input name= "room[student_ids][]" type="hidden" value= <%= current_teacher.id%>>
+          <%elsif student_signed_in?%>
+            <%Teacher.where(id: current_student.teacher_id).each do |teacher|%>
+             <div class="chat-member">
+             <%=teacher.name %>先生
+             <input type="checkbox" value=<%=teacher.id%> name= "teacher_room[teacher_id]" > 
+             </div>
+            <%end%>
+         <%end%>
+           
+        
+    </div>
+
+
+    </div>
+     
+    <div class='chat-room-form__field-bottom'>
+        <%= f.submit "チャット作成",class: 'chat-room-form__action-btn'%>
+        <%=link_to "キャンセル" ,:back ,class: 'chat-room-form__action-btn cansel'%>
+    </div>
+    
+  <% end %>
+</div>
+</div>
+

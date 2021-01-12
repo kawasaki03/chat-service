@@ -11,7 +11,7 @@
   margin: 40px auto;
   padding: 40px;
   background-color: #fefefe;
-  border: 1px solid #80989b;
+  border: 1px solid #8c7851;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -22,13 +22,14 @@
   display: flex;
   flex-direction: column;
   width: 250px;
+  margin: 20px 50px;
 }
 
 .account-page__header h2 {
   margin-bottom: 10px;
   /* letter-spacing: 3px; */
-  color: green;
-  font-size: 40px;
+  color: #7b5544;
+  font-size: 35px;
   font-weight: 200;
   font-family: 'arial unicode ms';
 }
@@ -42,7 +43,7 @@
   display: block;
   width: 200px;
   margin-top: 5px;
-  border-bottom: 3px dotted wheat;
+  
 }
 .account-page__header h5 {
   margin-bottom: 20px;
@@ -57,9 +58,8 @@
 }
 .field {
   margin-bottom: 10px;
-  
 }
-.select-admin{
+.select-teacher{
   width: 100%;
   padding: 5px;
   font-size: 13px;
@@ -80,6 +80,12 @@
   padding: 5px;
   letter-spacing: 1px;
 }
+.account-page .field .field-input textarea {
+  width: 100%;
+  padding: 5px;
+  letter-spacing: 1px;
+}
+
 .account-page .btn {
   display: inline-block;
   height: 50px;
@@ -116,6 +122,7 @@
 }
 .account-page .field-input .field_with_errors {
   position: relative;
+  
 }
 .account-page .field-input .field_with_errors:after {
   content: "";
@@ -127,6 +134,14 @@
   width: 5px;
   background-color: #d65f4c;
 } 
+.alert-warning {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #d65f4c;
+}
+
 
 #error_explanation {
   margin: 20px 0px;
@@ -147,5 +162,11 @@
 #error_explanation li {
   margin: 0;
   padding: 0;
+  font-size: 13px;
+}
+
+
+/* edit */
+.profile-image-field {
   font-size: 13px;
 }

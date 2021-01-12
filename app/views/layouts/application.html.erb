@@ -11,38 +11,49 @@
   </head>
 
   <body>
-   <%if user_signed_in? %>
+   <%if student_signed_in? %>
   <div class="screen">
      <div class = "header-bar">
-        <%=link_to user_path(current_user.id),class:"link-li" do%>
+     <div class = "header-bar__left">
+        <%=link_to student_path(current_student.id),class:"link-li" do%>
          <i class="fas fa-home" > home</i>
         <%end%>
-        <%=link_to edit_user_path(current_user.id),class:"link-li" do%>
+        <%=link_to edit_student_path(current_student.id),class:"link-li" do%>
          <i class="fas fa-edit">edit</i>
         <%end%>
         <%=link_to rooms_path,class:"link-li" do%>
         <i class="fas fa-comments"> students</i>
         <%end%>
-        <%=link_to admin_rooms_path,class:"link-li" do%>
+        <%=link_to teacher_rooms_path,class:"link-li" do%>
         <i class="fas fa-comments"> teacher</i>
         <%end%>
+      </div>
+      <div class= "header-bar__right">
+         <%=image_tag current_student.image.variant(resize: '40x40') , class: "user-image" if current_student.image.attached?%>
+         <%= link_to(current_student.name,edit_student_path(current_student.id))%>
+      </div>
      </div>
      <div class= "wrap">
         <%= yield %>
      </div>
   </div>
-  <%elsif admin_signed_in? %>
+  <%elsif teacher_signed_in? %>
   <div class="screen">
      <div class = "header-bar">
-        <%=link_to admin_path(current_admin.id) do%>
+      <div class = "header-bar__left">
+        <%=link_to teacher_path(current_teacher.id) do%>
         <i class="fas fa-home"> home</i>
         <%end%>
-        <%=link_to edit_admin_path(current_admin.id) do %>
+        <%=link_to edit_teacher_path(current_teacher.id) do %>
         <i class="fas fa-edit"> edit</i>
         <%end%>
-        <%=link_to admin_rooms_path do%>
-        <i class="fas fa-comments"> teacher</i>
+        <%=link_to teacher_rooms_path do%>
+        <i class="fas fa-comments"> chat</i>
         <%end%>
+        </div>
+         <div class= "header-bar__right">
+         <%= link_to(current_teacher.name,edit_teacher_path(current_teacher.id))%>
+      </div>
      </div>
      <div class= "wrap">
         <%= yield %>

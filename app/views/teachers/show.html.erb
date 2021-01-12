@@ -1,0 +1,31 @@
+<div class="wrapper">
+<div class='account-page' id='account-page'>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--left account-page__header'>
+      <h2>ようこそ、<%=current_teacher.name%>先生</h3>
+      <div class= "students-info">
+      <h3>生徒情報<h3>
+      <% @students.each do |student|%>
+      <div class= "student-info">
+      <%=student.name%>
+      </div>
+      <%end%>
+      </div>
+
+  <div class='account-info'>
+      <h3>登録情報</h3>
+      <p>お名前：<%=current_teacher.name%></p>
+      <p>メールアドレス：<%=current_teacher.email%></p>
+
+      <%= link_to "編集", edit_teacher_path(id: params[:id]),class: 'btn'%>
+      <%= link_to "ログアウト", destroy_teacher_session_path, method: :delete,class: 'btn'%>
+    </div>
+
+    <div class="move-chat">
+    <%=link_to "チャットを始める", "#"%>
+    </div>
+     
+   
+  </div>
+</div>
+</div>

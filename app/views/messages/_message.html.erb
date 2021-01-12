@@ -1,9 +1,9 @@
-<%if current_user.id == message.user.id%>
+<%if current_student.id == message.student.id%>
 <div class="message-wrapper">
      <div class="my-message">
       <div class="my-name-date">
         <div class="name">
-          <%=message.user.name%>
+          <%=message.student.name%>
         </div>
         <div class="date">
           <%=l message.created_at%>
@@ -25,7 +25,7 @@
     <div class="your-message">
       <div class="your-name-date">
         <div class="name">
-          <%=message.user.name%>
+          <%=message.student.name%>
         </div>
         <div class="date">
           <%=l message.created_at%>
