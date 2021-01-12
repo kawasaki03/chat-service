@@ -7,4 +7,5 @@ class Teacher < ApplicationRecord
   has_many :students
   has_many :teacher_rooms
   validates :name,presence: true
+  has_one_attached :image
 end

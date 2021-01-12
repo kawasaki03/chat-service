@@ -10,7 +10,7 @@ class TeachersController < ApplicationController
 
   def update
     if current_teacher.update(teacher_params)
-      redirect_to root_path
+      redirect_to teacher_path(current_teacher)
     else 
       render :edit
     end

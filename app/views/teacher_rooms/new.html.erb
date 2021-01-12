@@ -17,16 +17,28 @@
          <%if teacher_signed_in?%>
             <%Student.where(teacher_id: current_teacher.id).each do |student|%>
             <div class="chat-member">
-             <%=student.name %> 
              <input type="checkbox" value=<%=student.id%> name= "teacher_room[student_id]"  > 
+             <div class= "chat-member_image">
+             <%=image_tag student.image.variant(resize: '50x50')  if student.image.attached?%>
+             </div>
+             
+              <div class= "chat-member__name"><%=student.name %></div>
+              <div class= "chat-member__status_message"><%=student.status_message%> </div>
+             
              </div>
             <%end%>
             <input name= "room[student_ids][]" type="hidden" value= <%= current_teacher.id%>>
           <%elsif student_signed_in?%>
             <%Teacher.where(id: current_student.teacher_id).each do |teacher|%>
              <div class="chat-member">
-             <%=teacher.name %>先生
              <input type="checkbox" value=<%=teacher.id%> name= "teacher_room[teacher_id]" > 
+             <div class= "chat-member_image">
+             <%=image_tag teacher.image.variant(resize: '50x50')  if teacher.image.attached?%>
+             </div>
+             
+              <div class= "chat-member__name"><%=teacher.name %>先生</div>
+              <div class= "chat-member__status_message"><%=teacher.status_message%> </div>
+             
              </div>
             <%end%>
          <%end%>
