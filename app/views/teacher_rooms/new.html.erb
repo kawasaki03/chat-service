@@ -17,7 +17,7 @@
          <%if teacher_signed_in?%>
             <%Student.where(teacher_id: current_teacher.id).each do |student|%>
             <div class="chat-member">
-             <input type="checkbox" value=<%=student.id%> name= "teacher_room[student_id]"  > 
+             <input type="radio" value=<%=student.id%> name= "teacher_room[student_id]"  > 
              <div class= "chat-member_image">
              <%=image_tag student.image.variant(resize: '50x50')  if student.image.attached?%>
              </div>
@@ -31,7 +31,7 @@
           <%elsif student_signed_in?%>
             <%Teacher.where(id: current_student.teacher_id).each do |teacher|%>
              <div class="chat-member">
-             <input type="checkbox" value=<%=teacher.id%> name= "teacher_room[teacher_id]" > 
+             <input type="radio" value=<%=teacher.id%> name= "teacher_room[teacher_id]" > 
              <div class= "chat-member_image">
              <%=image_tag teacher.image.variant(resize: '50x50')  if teacher.image.attached?%>
              </div>
