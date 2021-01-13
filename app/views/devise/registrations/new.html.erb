@@ -1,11 +1,11 @@
 <div class='account-page' id='account-page'>
   <div class='account-page__inner '>
     <div class='account-page__header'>
-      <h2>こねくと</h2>
+      <h2>Connect</h2>
       <h5>新規アカウントの作成</h5>
     </div>
-    
-       <%= devise_error_messages!%>
+
+     <%= devise_error_messages! %>
     <div class='user-form'>
       <%= form_with model: resource, as: resource_name, url: registration_path(resource_name), local: true do |f|%>
         <div class='field'>
@@ -42,6 +42,18 @@
             <%= f.password_field :password_confirmation, autocomplete: "off"%>
           </div>
         </div>
+
+     
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :teacher,"講師名"%>
+          </div>
+          <div class='field-input'>
+            <%= f.collection_select :teacher_id,Teacher.all,:id,:name,{include_blank: "担当の講師名を選択してください"},{class:"select-teacher"}%>
+          </div>
+        </div>
+     
+
         <div class='actions'>
           <%= f.submit "登録する", class: 'btn'%>
         </div>
@@ -49,8 +61,9 @@
     <% end %>
   </div>
   <div class='account-page__inner '>
-    <div class= "move-page">アカウントをお持ちですか？→ 
-    <%=link_to "ログインする",new_session_path(resource_name)%>
+    <div class= "move-page">アカウントをお持ちですか？
+    <p>→<%=link_to "ログインする(先生)",new_teacher_session_path%></p>
+    <p>→<%=link_to "ログインする(生徒)",new_student_session_path%></p>
     </div>
     </div>
 </div>

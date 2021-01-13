@@ -1,20 +1,26 @@
 <div class="side-bar">
  <div class="side-bar-header">
   <div class="name">
-    <%= link_to(current_user.name,edit_user_path(current_user.id),class:"current-user-name")%>
-  </div>
-  <div class="create-chat">
-    <%=link_to("チャットを作成する",new_room_path)%>
+    <div class= "current-chat-name"> <i class="fas fa-comments"> students</i></div>
   </div>
  </div>
  <div class="rooms">
- <% current_user.rooms.each do |room|%>
+ <% current_student.rooms.reverse.each do |room|%>
   <div class="room">
     <div class="room-name">
       <%=link_to(room.name,room_messages_path(room.id))%>
     </div>
   </div>
     <%end%>
-  
- </div>
+  </div>
+  <div class= "chat-edit">
+  <div class="create-chat">
+    <%=link_to("チャット作成",new_room_path)%>
+  </div>
+  <%if request.url.include?("messages")%>
+  <div class="delete-chat">
+        <%=link_to("チャット削除",room_path(@room.id), method: :delete) %>
+      </div>
+        <%end%>
+</div>
 </div>

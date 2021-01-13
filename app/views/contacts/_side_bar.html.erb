@@ -1,0 +1,44 @@
+<div class="side-bar">
+<div class="side-bar-header">
+  <div class="name">
+    <%if teacher_signed_in?%>
+       <div class= "current-chat-name"><i class="fas fa-comments"> students</i></div>
+      <%elsif student_signed_in?%>
+      <div class= "current-chat-name"><i class="fas fa-comments"> teacher</i></div>
+      <%end%>
+  </div>
+  
+</div>
+ 
+
+<div class="rooms">
+ <%if teacher_signed_in?%>
+   <% current_teacher.teacher_rooms.reverse.each do |room|%>
+    <div class="room">
+      <div class="room-name">
+        <%=link_to(room.name,teacher_room_contacts_path(room.id))%>
+      </div>
+    </div>
+   <%end%>
+ <%elsif student_signed_in? %>
+    <% current_student.teacher_rooms.reverse.each do |room|%>
+     <div class="room">
+        <div class="room-name">
+         <%=link_to(room.name,teacher_room_contacts_path(room.id))%>
+        </div>
+     </div>
+    <%end%>
+  <%end%>
+
+</div>
+<div class= "chat-edit">
+  <div class="create-chat">
+    <%=link_to("チャット作成",new_teacher_room_path)%>
+  </div>
+  <%if request.url.include?("contacts")%>
+  <div class="delete-chat">
+        <%=link_to("チャット削除",teacher_room_path(@teacher_room.id), method: :delete) %>
+      </div>
+        <%end%>
+</div>
+  </div>

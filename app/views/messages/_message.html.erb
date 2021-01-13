@@ -1,17 +1,19 @@
-<%if current_user.id == message.user.id%>
+<%if current_student.id == message.student.id%>
 <div class="message-wrapper">
      <div class="my-message">
       <div class="my-name-date">
         <div class="name">
-          <%=message.user.name%>
+          <%=message.student.name%>
         </div>
         <div class="date">
           <%=l message.created_at%>
         </div>
       </div>
+      <%if message.content != ""%>
       <div class="text">
         <p><%= message.content%></p>
       </div>
+        <%end%>
       <div class='message-image'>
        <%=image_tag message.image.variant(resize: '300x300'), class: 'message-img' if message.image.attached?%>
        </div>
@@ -23,15 +25,17 @@
     <div class="your-message">
       <div class="your-name-date">
         <div class="name">
-          <%=message.user.name%>
+          <%=message.student.name%>
         </div>
         <div class="date">
           <%=l message.created_at%>
         </div>
       </div>
+      <%if message.content != ""%>
       <div class="text">
         <p><%=message.content%></p>
       </div>
+      <%end%>
       <div class='message-image'>
       <%=image_tag message.image.variant(resize: '300x300'), class: 'message-img' if message.image.attached?%>
       </div>

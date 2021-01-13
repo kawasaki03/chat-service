@@ -1,0 +1,42 @@
+<div class="wrapper">
+<div class='account-page'>
+  <div class='account-page__inner'>
+    <div class='account-page__header'>
+      <h2>ようこそ、<%=current_teacher.name%>先生</h3>
+      </div>
+
+   <div class='account-info'>
+      <h3>- 登録情報 -</h3>
+      <div class="account-info-data">
+      
+      <div class="account-info-data__left">
+        <%=image_tag current_teacher.image.variant(resize: '70x70') , class: "user-image" if current_teacher.image.attached?%>
+      </div>
+
+      <div class="account-info-data__right">
+      <p>名前： <%=current_teacher.name%></p>
+      <p>メールアドレス： <%=current_teacher.email%></p>
+      <p>メッセージ： <%=current_teacher.status_message%></p>
+      </div>
+      </div>
+   </div>
+
+
+    <div class= "students-info">
+      <h3>- 生徒情報 -<h3>
+      <% @students.each do |student|%>
+      <div class= "student-info">
+      <%=student.name%>さん
+      </div>
+      <%end%>
+      </div>
+    <div class="move-chat">
+    <%=link_to "チャットを始める", teacher_rooms_path%>
+     <%= link_to "編集", edit_teacher_path(id: params[:id]),class: 'btn'%>
+      <%= link_to "ログアウト", destroy_teacher_session_path, method: :delete,class: 'btn'%>
+    </div>
+     
+   
+  </div>
+</div>
+</div>

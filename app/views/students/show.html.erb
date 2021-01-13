@@ -1,0 +1,25 @@
+<div class="wrapper">
+<div class='account-page'>
+  <div class='account-page__inner'>
+    <div class='account-page__header'>
+      <h2>ようこそ、<%=current_student.name%>さん</h3>
+    </div>
+
+   <div class='account-info'>
+      <h3>- 登録情報 -</h3>
+      <div class="account-info-data">
+      
+      <div class="account-info-data__left">
+        <%=image_tag current_student.image.variant(resize: '70x70') , class: "user-image" if current_student.image.attached?%>
+      </div>
+
+      <div class="account-info-data__right">
+      <p>名前： <%=current_student.name%></p>
+      <p>メールアドレス： <%=current_student.email%></p>
+      <p>メッセージ： <%=current_student.status_message%></p>
+      </div>
+      </div>
+    </div>
+</div>
+</div>
+</div>

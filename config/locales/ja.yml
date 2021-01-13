@@ -2,3 +2,17 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+ja:
+ activerecord:
+   attributes:
+     student:
+       email: メールアドレス
+       teacher: 講師名
+       password: パスワード
+       name: 名前
+       password_confirmation: 確認用パスワード
+     teacher:
+       email: メールアドレス
+       password: パスワード
+       name: 名前
+       password_confirmation: 確認用パスワード
