@@ -11,8 +11,10 @@ ja:
        password: パスワード
        name: 名前
        password_confirmation: 確認用パスワード
+       status_message: メッセージ
      teacher:
        email: メールアドレス
        password: パスワード
        name: 名前
        password_confirmation: 確認用パスワード
+       status_message: メッセージ
