@@ -1,4 +1,6 @@
 class TeacherRoomsController < ApplicationController
+  before_action :authenticate_any!
+
   def index
   end
 
@@ -18,7 +20,7 @@ class TeacherRoomsController < ApplicationController
   def destroy
     @teacher_room = TeacherRoom.find(params[:id])
     @teacher_room.destroy
-    redirect_to rooms_path
+    redirect_to teacher_rooms_path
   end
 
   private
@@ -30,5 +32,12 @@ class TeacherRoomsController < ApplicationController
       params.require(:teacher_room).permit(:name,:teacher_id).merge(student_id: current_student.id)
     end
   end 
+
+  def authenticate_any!
+    if student_signed_in?
+    elsif authenticate_teacher!
+    end
+  end
+  
 
 end

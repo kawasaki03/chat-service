@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'top#index'
   devise_for :teachers, controllers: {
     sessions: "teachers/sessions",
     passwords:  'teachers/passwords',
