@@ -18,9 +18,20 @@
    box-sizing: border-box;
  }
 
+
  body {
   height: 100vh;
   margin: 0;
+}
+
+.screen{
+  height: auto;
+  overflow:hidden;
+}
+
+.wrap{
+  margin-top: 10vh;
+  height: calc(100% - 10vh)
 }
 
  .wrapper {
@@ -29,15 +40,19 @@
    display: flex;
  }
  
+ 
 
  .header-bar {
    height: 10vh;
   width: 100vw;
   background-color:#f9f4ef ;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   border: 1px solid #716040;
   filter: drop-shadow(4px 0 5px #716040);
+  position: fixed;
+  top:0
   /* box-shadow:2px 2px 5px #716040; */
   /* position: relative; */
   /* flex-direction: column; */
@@ -72,6 +87,24 @@
 
 .user-image{
   margin-right: 5px;
+}
+
+.link-li__logout{
+  text-decoration: none;  
+ color:#020826;
+ margin-right: 8px;
+ margin-left: 8px;
+}
+
+.mg-15{
+  margin:0 15px;
+}
+
+.app-name{
+  text-decoration: none;
+  color:  #7b5544;
+  font-family: 'arial unicode ms';
+  padding-left: 20px;
 }
 
 

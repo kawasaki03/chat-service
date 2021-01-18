@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_student!
+  
   def index
     @room = Room.find(params[:room_id])
     @message = Message.new

@@ -1,4 +1,7 @@
 <div class="wrapper">
+<div class="piano__image-wrap">
+<div class="piano__image">
+
 <div class='account-page'>
   <div class='account-page__inner'>
     <div class='account-page__header'>
@@ -21,22 +24,13 @@
       </div>
    </div>
 
-
-    <div class= "students-info">
-      <h3>- 生徒情報 -<h3>
-      <% @students.each do |student|%>
-      <div class= "student-info">
-      <%=student.name%>さん
-      </div>
-      <%end%>
-      </div>
-    <div class="move-chat">
-    <%=link_to "チャットを始める", teacher_rooms_path%>
-     <%= link_to "編集", edit_teacher_path(id: params[:id]),class: 'btn'%>
+    <div class="move">
       <%= link_to "ログアウト", destroy_teacher_session_path, method: :delete,class: 'btn'%>
     </div>
      
    
   </div>
+</div>
+</div>
 </div>
 </div>

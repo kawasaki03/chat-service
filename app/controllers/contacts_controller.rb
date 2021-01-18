@@ -1,4 +1,7 @@
 class ContactsController < ApplicationController
+  before_action :authenticate_any!
+
+  
   def index
     @teacher_room = TeacherRoom.find(params[:teacher_room_id])
     @contact = Contact.new
@@ -29,4 +32,12 @@ class ContactsController < ApplicationController
   def contact_params    
     params.require(:contact).permit(:content,:image)
   end
+
+  def authenticate_any!
+    if student_signed_in?
+    elsif authenticate_teacher!
+    end
+  end
+  
+
 end

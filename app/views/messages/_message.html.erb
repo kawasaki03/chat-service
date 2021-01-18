@@ -6,12 +6,12 @@
           <%=message.student.name%>
         </div>
         <div class="date">
-          <%=l message.created_at%>
+          <%=message.created_at.strftime("%Y年%m月%d日%H時%M分")%>
         </div>
       </div>
       <%if message.content != ""%>
       <div class="text">
-        <p><%= message.content%></p>
+        <%=simple_format(message.content)%>
       </div>
         <%end%>
       <div class='message-image'>
@@ -28,12 +28,12 @@
           <%=message.student.name%>
         </div>
         <div class="date">
-          <%=l message.created_at%>
+          <%=message.created_at.strftime("%Y年%m月%d日%H時%M分")%>
         </div>
       </div>
       <%if message.content != ""%>
       <div class="text">
-        <p><%=message.content%></p>
+        <%=simple_format(message.content)%>
       </div>
       <%end%>
       <div class='message-image'>

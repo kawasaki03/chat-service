@@ -1,6 +1,7 @@
 .account-page {
-  background-color:#fff;
-  width: 100vw;
+  padding-top: 10px;
+  /* background-color:#fff; */
+  width: 100%;
   height:100%;
 }
 
@@ -10,7 +11,8 @@
   width: 500px;
   margin: 40px auto;
   padding: 40px 30px;
-  background-color: #fefefe;
+  /* background-color: #fefefe; */
+  background:rgba(255, 250, 250, 0.7);
   border: 1px solid #8c7851;
   border-radius: 5px;
   display: flex;
@@ -198,17 +200,5 @@
 
 .account-info-data__right p{
   margin-bottom: 5px;
-  
 }
  
-
-.students-info {
-  width: 100%;
-  margin-top: 30px;
-  text-align: center;
-}
-
-
-.student-info {
-   font-size: 17px;
-}

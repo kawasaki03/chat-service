@@ -7,11 +7,11 @@
          <%=@teacher_room.student.name%>
         </div>
         <div class="date"> 
-          <%=contact.created_at %>
+          <%=contact.created_at.strftime("%Y年%m月%d日%H時%M分") %>
         </div>
       </div>
       <div class="text">
-        <p><%=contact.content%></p>
+        <%=simple_format(contact.content)%>
       </div>
       <div class='message-image'>
       <%=image_tag contact.image.variant(resize: '300x300'), class: 'message-img' if contact.image.attached?%>
@@ -29,11 +29,11 @@
         
         </div>
         <div class="date">
-          <%= contact.created_at%>
+          <%= contact.created_at.strftime("%Y年%m月%d日%H時%M分")%>
         </div>
       </div>
       <div class="text">
-        <p><%= contact.content%></p>
+        <%=simple_format(contact.content)%>
       </div>
       <div class='message-image'>
       <%=image_tag contact.image.variant(resize: '300x300'), class: 'message-img' if contact.image.attached? %>
@@ -53,11 +53,11 @@
         
         </div>
         <div class="date">
-          <%= contact.created_at%>
+          <%= contact.created_at.strftime("%Y年%m月%d日%H時%M分")%>
         </div>
       </div>
       <div class="text">
-        <p><%= contact.content%></p>
+        <%=simple_format(contact.content)%>
       </div>
       <div class='message-image'>
       <%=image_tag contact.image.variant(resize: '300x300'), class: 'message-img' if contact.image.attached?%>
@@ -73,11 +73,11 @@
          <%=@teacher_room.teacher.name%>
         </div>
         <div class="date"> 
-          <%=contact.created_at %>
+          <%=contact.created_at.strftime("%Y年%m月%d日%H時%M分") %>
         </div>
       </div>
       <div class="text">
-        <p><%=contact.content%></p>
+       <%=simple_format(contact.content)%>
       </div>
       <div class='message-image'>
       <%=image_tag contact.image.variant(resize: '300x300'), class: 'message-img' if contact.image.attached?%>
