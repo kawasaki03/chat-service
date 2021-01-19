@@ -8,7 +8,7 @@
 .piano__image-wrap{
   height: 90vh;
   width: 100vw;
-  background-image: url("piano.png");
+  background-image: image-url("piano.png");
   background-size: cover;
 }
 
