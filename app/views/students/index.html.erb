@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div class="account-page">
+    <div class="students-index-page">
+    <h1>- 生徒情報一覧 -</h1>
+      <%@students.each do |student|%>
+        <div class='account-info'>
+          
+          <div class="students-index__account-info-data">
+          
+          <div class="account-info-data__left">
+            <%=image_tag student.image.variant(resize: '70x70') , class: "user-image" if student.image.attached?%>
+          </div>
+
+          <div class="account-info-data__right">
+          <h1> <%=student.name%>さん</h1>
+          <p>メッセージ： <%=student.status_message%></p>
+          </div>
+         <%=link_to "＞＞詳細ページへ" ,student_records_path(id: student.id),class:"move-show"%>
+           
+        </div>
+      <%end%>
+    </div>
+  </div>
+</div>
