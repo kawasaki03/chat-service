@@ -85,6 +85,10 @@
  color:#020826;
 }
 
+.header-bar__right a:hover,.link-li:hover{
+  color: #155765;
+}
+
 .user-image{
   margin-right: 5px;
 }

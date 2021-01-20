@@ -201,4 +201,53 @@
 .account-info-data__right p{
   margin-bottom: 5px;
 }
+
+.account-info-data__left{
+  height: 80px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  
+}
  
+
+/* student-index */
+.students-index-page {
+  margin: 0 100px;
+}
+
+.students-index-page h1{
+  margin: 40px auto;
+  font-size: 35px;
+  color: #7b5544;
+  text-align: center;
+  font-family: 'arial unicode ms';
+}
+.students-index__account-info-data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:0 20px 30px 30px;
+  border-bottom:1px solid #d5c3aa;
+}
+
+.account-info-data__right h1{
+  font-size: 22px;
+  margin: 0px;
+  padding-bottom: 10px;
+  color: black;
+  text-align: left;
+}
+
+.move-show{
+  margin-top: 30px;
+  text-align: right;
+  font-size: 15px;
+  text-decoration: none;
+  color: #155765;
+}
+
+.move-show:hover {
+  font-size: 16px;
+  font-weight: bold;
+}
