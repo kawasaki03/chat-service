@@ -46,14 +46,15 @@
 
 .chat-member {
  margin: 20px;
+ padding-bottom: 22px;
+ border-bottom: 1px solid #d5c3aa;
  font-size: 20px;
- height: 70px;
  display: flex;
  align-items: center;
 
 }
 .chat-member_image{
-  margin-left: 20px;
+  margin: 0 20px;
   display: inline-block;
   display: flex;
   align-items: center;
@@ -71,7 +72,8 @@ height: 60px;
   color: gray;
   font-size: 12px;
   text-align: center;
-  width: 170px
+  width: 200px;
+  height: 100%;
 }
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_13_034614) do
+ActiveRecord::Schema.define(version: 2021_01_20_141245) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -68,6 +68,17 @@ ActiveRecord::Schema.define(version: 2020_12_13_034614) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "student_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "note"
+    t.bigint "student_id"
+    t.bigint "teacher_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_student_records_on_student_id"
+    t.index ["teacher_id"], name: "index_student_records_on_teacher_id"
+  end
+
   create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -114,6 +125,8 @@ ActiveRecord::Schema.define(version: 2020_12_13_034614) do
   add_foreign_key "messages", "students"
   add_foreign_key "room_students", "rooms"
   add_foreign_key "room_students", "students"
+  add_foreign_key "student_records", "students"
+  add_foreign_key "student_records", "teachers"
   add_foreign_key "teacher_rooms", "students"
   add_foreign_key "teacher_rooms", "teachers"
 end

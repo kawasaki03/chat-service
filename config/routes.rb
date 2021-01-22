@@ -11,9 +11,12 @@ Rails.application.routes.draw do
     registrations: 'students/registrations'
   }
   resources :teachers, only: [:edit,:update,:show]
-  resources :students, only: [:edit,:update,:show]
+  resources :students, only: [:edit,:update,:show,:index] do
+    member do
+    resources :student_records
+    end
+  end
   get 'messages/index'
-  # root to: "rooms#index"
   resources :rooms,only: [:index,:new,:create,:destroy] do
   resources :messages,only: [:new,:create,:index]
   end

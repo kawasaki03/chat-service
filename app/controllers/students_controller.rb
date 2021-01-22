@@ -1,8 +1,9 @@
 class StudentsController < ApplicationController
-  before_action :authenticate_student!
+  before_action :authenticate_student!, except:[:index]
+  before_action :authenticate_teacher!, only:[:index]
 
   def show
-end
+  end
 
   def edit
   end
@@ -13,6 +14,10 @@ end
     else 
       render :edit
     end
+  end
+
+  def index
+    @students = Student.where(teacher_id: current_teacher.id)
   end
 
 

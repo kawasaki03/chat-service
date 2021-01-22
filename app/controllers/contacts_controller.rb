@@ -10,7 +10,6 @@ class ContactsController < ApplicationController
 
 
   def create
-    binding.pry
     @teacher_room= TeacherRoom.find(params[:teacher_room_id])
     @contact = Contact.new(contact_params)
     if teacher_signed_in?

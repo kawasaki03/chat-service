@@ -85,6 +85,10 @@
  color:#020826;
 }
 
+.header-bar__right a:hover,.link-li:hover{
+  color: #155765;
+}
+
 .user-image{
   margin-right: 5px;
 }
@@ -268,7 +272,6 @@
   padding: 10px 10px;
   width: 100%;
   border:none;
-  /* /* border: 2px solid #7b5544; */
   border-radius: 15px;
  }
 
