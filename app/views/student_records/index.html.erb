@@ -1,0 +1,80 @@
+<div class="wrapper">
+
+<div class='student-info-page'>
+  <div class = 'student-info-page__left'>
+      <div class='student-info-page__header'>
+      <h2><%=@student.name%>さん</h2>
+      </div>
+
+      <div class='student-info-page__inner'>
+        <div class='student-info'>
+          <h3>- 登録情報 -</h3>
+          <div class="student-info-data">
+          
+            <div class="student-info-data__left">
+              <%=image_tag @student.image.variant(resize: '70x70') , class: "user-image" if @student.image.attached?%>
+            </div>
+
+            <div class="student-info-data__right">
+              <p>名前： <%=@student.name%></p>
+              <p>メッセージ： <%=@student.status_message%></p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+   
+   <%=form_with model:[@student_record], class:"student-info-form",local: true do |f|%>
+   <h2>レッスンメモ</h2>
+    <%# <div class="form-input"> %>
+    <%=f.label :title,"タイトル"%>
+      <%= f.text_area :title, class:"student-info-form-title" , placeholder:"type a message"%>
+    <%# </div> %>
+    <%# <div class="form-input"> %>
+    <%=f.label :note,"メモ"%>
+      <%= f.text_area :note, class:"student-info-form-note" , placeholder:"type a message"%>
+    <%# </div> %>
+     <div class="student-info-form-submit">
+    <%=f.submit "投稿する", class:"form-submit"%>
+    </div>
+  <%end%>
+
+    
+  </div>
+
+
+  <div class="student-info-page__right">
+    <div class='student-info-page__header'>
+      <h2>レッスンメモ一覧</h3>
+    </div>  
+      <div class = "lesson-notes">
+        <%@student.student_records.reverse.each do |record|%>
+        <div class = lesson-note-wrap>
+          <div class = "lesson-created-at">
+            <%= record.created_at.strftime("%Y年%m月%d日%H時%M分")%>
+          </div>
+          <div class = "lesson-note">
+            <div class = "lesson-title">
+              <%= record.title%>
+            </div>
+            <div class= "lesson-content">
+              <%=simple_format(record.note)%>
+            </div>
+          </div>
+        </div>
+        <%end%>
+      
+      <%if  @student.student_records.length == 0%>
+        <div class="no-record">
+        -  レッスンメモが投稿されていません  -
+        </div>
+      <%end%>
+    
+    
+      </div>
+  </div>
+
+</div>
+
+
+</div>

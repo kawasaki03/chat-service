@@ -7,11 +7,9 @@
 
 
 .account-page__inner {
-  /* width: 980px; */
   width: 500px;
   margin: 40px auto;
   padding: 40px 30px;
-  /* background-color: #fefefe; */
   background:rgba(255, 250, 250, 0.7);
   border: 1px solid #8c7851;
   border-radius: 5px;
@@ -251,3 +249,165 @@
   font-size: 16px;
   font-weight: bold;
 }
+
+
+/* student records */
+
+/* 左側 */
+.student-info-page {
+  padding-top: 10px;
+  width: 100%;
+  height:90vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.student-info-page__left {
+  height:100%;
+  width: 400px;
+  border:1px solid #8c7851;
+  background-color:#eae2d6;
+}
+
+.student-info-page__inner {
+  margin: 10px;
+  height: 200px;
+  margin-bottom: calc(90vh - 670px);
+  padding: 10px 30px 20px 30px;
+  background:rgba(255, 255, 255,0.8);
+  border: 1px solid #8c7851;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.student-info-page__header{
+  margin: 20px 0 0 20px;
+  width: 100%;
+  text-align: left;
+  color: #7b5544;
+  font-size: 25px;
+  font-weight: 200;
+  font-family: 'arial unicode ms';
+}
+
+.student-info-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.student-info{
+  width: 100%;
+}
+.student-info h3{
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.student-info-data__right {
+  width: 80%;
+  margin-left: 30px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.student-info-data__right p{
+  margin-bottom: 5px;
+  word-break: break-all;
+}
+
+.student-info-data__left{
+  height: 80px;
+  width: 80px;
+  display: flex;
+  align-items: center;  
+}
+
+.student-info-form{
+  margin-top: 30px;
+  padding-left: 20px;
+  height: 400px;
+}
+.student-info-form h2{
+  margin-bottom: 8px;
+  color: #7b5544;
+  font-size: 20px;
+  font-weight: 200;
+  font-family: 'arial unicode ms';
+}
+
+.student-info-form-title,.student-info-form-note{
+  width: 90%;
+  height:50px;
+  padding: 9px;
+   display: flex;
+   background-color: white;
+   border: 2px solid #494e6b;
+  border-radius: 15px;
+}
+.student-info-form-title:focus,.student-info-form-note:focus{
+  outline: none;
+  border: 2px solid #155765;
+  border-radius: 15px;
+}
+.student-info-form-note{
+  height: 40%;
+}
+
+.student-info-form-submit{
+  width: 100%;
+  padding: 10px 40px 0 0;
+  text-align: right;
+}
+
+/* 右側 */
+.student-info-page__right {
+  height:100%;
+  width: calc(100vw - 400px);
+  padding-left: 20px;
+  overflow: scroll;
+}
+
+.lesson-notes {
+  margin: 10px;
+  height: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: black; */
+}
+
+.lesson-note-wrap{
+  width: 80%;
+  height: auto;
+  margin: 20px auto;
+}
+.lesson-note{
+  border: 1px solid #e1b80d; 
+}
+
+.lesson-created-at {
+  color: gray;
+  font-size: 13px;
+  
+}
+.lesson-title {
+  background-color: #e1b80d;
+  padding: 10px;
+  font-size:18px;
+}
+
+.lesson-content {
+  padding: 10px;
+  font-size:15px;
+}
+
+.no-record{
+  font-size: 18px;
+  margin-top: 100px;
+  color: gray;
+}
+

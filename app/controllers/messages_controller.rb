@@ -8,7 +8,6 @@ class MessagesController < ApplicationController
   end
 
 
-  # 修正必要かも
   def create
     @room= Room.find(params[:room_id])
     @message= Message.new(message_params)
