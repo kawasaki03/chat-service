@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2021_01_20_141245) do
 
   create_table "student_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
-    t.string "note"
+    t.text "note"
     t.bigint "student_id"
     t.bigint "teacher_id"
     t.datetime "created_at", precision: 6, null: false
