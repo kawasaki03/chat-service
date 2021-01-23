@@ -9,7 +9,7 @@ RSpec.describe Teacher, type: :model do
     end
 
     context '新規登録ができる時' do
-      it "name,email,password,passwordconfirmationが存在すれば登録できること" do
+      it "id,name,email,password,passwordconfirmationが存在すれば登録できること" do
       expect(@teacher).to be_valid
       end
     end
@@ -29,6 +29,26 @@ RSpec.describe Teacher, type: :model do
         @teacher.email = "1122"
         @teacher.valid?
         expect(@teacher.errors.full_messages).to include("メールアドレスは不正な値です")
+      end
+      it '講師IDが空では登録できないこと' do
+        @teacher.id = ""
+        @teacher.valid?
+        expect(@teacher.errors.full_messages).to include("講師IDは半角の英字・数字を両方含んでください")
+      end
+      it '講師IDが7文字以下では登録できないこと' do
+        @teacher.id = "abcd123"
+        @teacher.valid?
+        expect(@teacher.errors.full_messages).to include("講師IDは8文字以上で入力してください")
+      end
+      it '講師IDが数字のみでは登録できないこと' do
+        @teacher.id = "12345678"
+        @teacher.valid?
+        expect(@teacher.errors.full_messages).to include("講師IDは半角の英字・数字を両方含んでください")
+      end
+      it 'passwordが英字のみでは登録できないこと' do
+        @teacher.id = "abcdefgh"
+        @teacher.valid?
+        expect(@teacher.errors.full_messages).to include("講師IDは半角の英字・数字を両方含んでください")
       end
       it 'passwordが空では登録できないこと' do
         @teacher.password = ""
