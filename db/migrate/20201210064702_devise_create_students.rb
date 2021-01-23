@@ -7,7 +7,7 @@ class DeviseCreateStudents < ActiveRecord::Migration[6.0]
       t.string :name,               null: false
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.references :teacher,       null:false
+      t.string :teacher_id,       null:false
       t.string :status_message
 
       ## Recoverable
@@ -41,6 +41,8 @@ class DeviseCreateStudents < ActiveRecord::Migration[6.0]
 
     add_index :students, :email,                unique: true
     add_index :students, :reset_password_token, unique: true
+    add_foreign_key :students, :teachers
+    add_index :students, :teacher_id
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
   end

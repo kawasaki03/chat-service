@@ -57,7 +57,7 @@ RSpec.describe Student, type: :model do
       it 'teacher_idが空では登録できないこと' do
         @student.teacher = nil
         @student.valid?
-        expect(@student.errors.full_messages).to include("講師名を入力してください")
+        expect(@student.errors.full_messages).to include("講師IDを入力してください")
       end
     end
   end

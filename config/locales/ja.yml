@@ -7,12 +7,13 @@ ja:
    attributes:
      student:
        email: メールアドレス
-       teacher: 講師名
+       teacher: 講師ID
        password: パスワード
        name: 名前
        password_confirmation: 確認用パスワード
        status_message: メッセージ
      teacher:
+       id: 講師ID
        email: メールアドレス
        password: パスワード
        name: 名前
