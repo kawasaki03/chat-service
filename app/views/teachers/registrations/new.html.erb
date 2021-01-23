@@ -41,6 +41,16 @@
           <div class='field-input'>
             <%= f.password_field :password_confirmation, autocomplete: "off"%>
           </div>
+          </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :id,"講師ID"%>
+              <i>(英数字8文字以上)</i>
+          </div>
+          <div class='field-input'>
+            <%= f.text_field :id, autocomplete: "off"%>
+          </div>
+          </div>
         </div>
 
         <div class='actions'>
