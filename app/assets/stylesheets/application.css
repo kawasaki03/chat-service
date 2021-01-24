@@ -53,10 +53,6 @@
   filter: drop-shadow(4px 0 5px #716040);
   position: fixed;
   top:0
-  /* box-shadow:2px 2px 5px #716040; */
-  /* position: relative; */
-  /* flex-direction: column; */
-  /* background-color:#4d2c3d; */
 }
 
 .header-bar__left {
@@ -114,13 +110,10 @@
 
 /* 左側 */
 .side-bar {
-  /* box-shadow:2px 2px 5px #716040; */
-  /* position: relative; */
   width: 300px;
   height: 90vh;
    background-color:  #eae2d6;
    border-right: 1px solid #020826;
-   /* filter: drop-shadow(4px 0 1px #716040); */
    
   }
   .side-bar-header{
