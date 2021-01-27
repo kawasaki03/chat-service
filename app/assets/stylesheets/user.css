@@ -207,7 +207,27 @@
   align-items: center;
   
 }
- 
+.move {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.logout {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px;
+  text-align: center;
+  width: 100px;
+  margin:20px;
+  color: #fff;
+  background-color:  #e1b80d;
+  border-radius: 10px;
+  box-shadow: 0px 5px 2px black;
+}
+.logout:hover{
+  box-shadow: none;
+  transform: translateY(2px);
+}
 
 /* student-index */
 .students-index-page {

@@ -5,13 +5,11 @@
 <div class='account-page'>
   <div class='account-page__inner'>
     <div class='account-page__header'>
-      <h2>ようこそ、<%=current_student.name%>さん</h3>
+      <h2>登録情報</h2>
     </div>
 
    <div class='account-info'>
-      <h3>- 登録情報 -</h3>
-      <div class="account-info-data">
-      
+      <div class="account-info-data">   
       <div class="account-info-data__left">
         <%=image_tag current_student.image.variant(resize: '70x70') , class: "user-image" if current_student.image.attached?%>
       </div>
@@ -23,7 +21,10 @@
       </div>
       </div>
     </div>
-     <%= link_to "ログアウト", destroy_student_session_path, method: :delete,class: 'btn'%>
+    <div class="move">
+     <%= link_to "編\b\b集", edit_student_path,class: 'logout'%>
+     <%= link_to "ログアウト", destroy_student_session_path, method: :delete,class: 'logout'%>
+     </div>
 </div>
 </div>
 </div>
