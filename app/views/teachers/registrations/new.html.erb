@@ -1,4 +1,6 @@
 <div class='account-page' id='account-page'>
+<div class="piano__image-wrap">
+<div class="piano__image">
   <div class='account-page__inner '>
     <div class='account-page__header'>
       <h2>コネクト</h2>
@@ -51,8 +53,6 @@
             <%= f.password_field :password_confirmation, autocomplete: "off"%>
           </div>
           </div>
-        </div>
-
         <div class='actions'>
           <%= f.submit "登録する", class: 'btn'%>
         </div>
@@ -64,5 +64,7 @@
     <p>→<%=link_to "ログインする(講師)",new_teacher_session_path%></p>
     <p>→<%=link_to "ログインする(生徒)",new_student_session_path%></p>
     </div>
-    </div>
+  </div>
+</div>
+</div>
 </div>
