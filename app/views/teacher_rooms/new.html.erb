@@ -33,7 +33,7 @@
              <div class="chat-member">
              <input type="radio" value=<%=teacher.id%> name= "teacher_room[teacher_id]" > 
              <div class= "chat-member_image">
-             <%=image_tag teacher.image.variant(resize: '50x50')  if teacher.image.attached?%>
+             <%=image_tag teacher.image.picture.url  if teacher.image?%>
              </div>
              
               <div class= "chat-member__name"><%=teacher.name %>先生</div>
