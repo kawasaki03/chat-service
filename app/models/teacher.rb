@@ -7,7 +7,7 @@ class Teacher < ApplicationRecord
   has_many :students
   has_many :teacher_rooms
   validates :name,presence: true
-  has_one_attached :image
+  mount_uploader :image,ImageUploader
   validates :status_message, length: { maximum: 50 }
   has_many :student_records
   validates :id,uniqueness: true, length: { minimum: 8 }
