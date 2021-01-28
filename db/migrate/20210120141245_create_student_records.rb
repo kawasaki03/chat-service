@@ -7,7 +7,7 @@ class CreateStudentRecords < ActiveRecord::Migration[6.0]
       t.string :teacher_id
       t.timestamps
     end
-    add_foreign_key :student_records, :teachers
     add_index :student_records, :teacher_id
+    add_foreign_key :student_records, :teachers
   end
 end

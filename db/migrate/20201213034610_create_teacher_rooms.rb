@@ -7,8 +7,8 @@ class CreateTeacherRooms < ActiveRecord::Migration[6.0]
      t.timestamps
     end
 
-    add_foreign_key :teacher_rooms, :teachers
     add_index :teacher_rooms, :teacher_id
+    add_foreign_key :teacher_rooms, :teachers
     
   end
 end

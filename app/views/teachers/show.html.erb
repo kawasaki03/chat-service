@@ -11,7 +11,7 @@
    <div class='account-info'>
       <div class="account-info-data">
       <div class="account-info-data__left">
-        <%=image_tag current_teacher.image.variant(resize: '70x70') , class: "user-image" if current_teacher.image.attached?%>
+        <%=image_tag current_teacher.image.picture.url, class: "user-image" if current_teacher.image?%>
       </div>
 
       <div class="account-info-data__right">
