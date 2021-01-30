@@ -21,7 +21,7 @@ RSpec.describe "講師ログイン機能", type: :system do
     fill_in 'メールアドレス',with: @teacher.email
     fill_in 'パスワード',with: @teacher.password
     # ログインボタンをクリックする
-    click_on("login")
+     find('input[name="commit"]').click
     # 詳細ページに遷移していることを確認する
     expect(current_path).to eq teacher_path(@teacher.id)
   end
@@ -40,7 +40,7 @@ RSpec.describe "講師ログイン機能", type: :system do
     fill_in 'メールアドレス',with: @teacher.email
     fill_in 'パスワード',with: "password"
     # ログインボタンをクリックする
-    click_on("login")
+     find('input[name="commit"]').click
     # サインインページに戻ってきていることを確認する
     expect(current_path).to eq new_teacher_session_path
   end
