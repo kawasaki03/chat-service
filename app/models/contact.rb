@@ -1,11 +1,11 @@
 class Contact < ApplicationRecord
   belongs_to :teacher_room
-  validates :content,presence: true, unless: :was_attached?
+  validates :content, presence: true, unless: :was_attached?
   has_one_attached :image
 
+  private
 
-private
   def was_attached?
-    self.image.attached?
+    image.attached?
   end
 end

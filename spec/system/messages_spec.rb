@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "メッセージ投稿機能", type: :system do
+RSpec.describe 'メッセージ投稿機能', type: :system do
   before do
     @room_student = FactoryBot.create(:room_student)
   end
@@ -14,9 +14,9 @@ RSpec.describe "メッセージ投稿機能", type: :system do
       visit room_messages_path(@room_student.room)
 
       # DBに保存されていないことを確認
-      expect{
+      expect do
         find('input[name = "commit"]').click
-      }.not_to change{Message.count}
+      end.not_to change { Message.count }
       # 元のページに戻ってくることを確認
       expect(current_path).to eq room_messages_path(@room_student.room)
     end
@@ -31,15 +31,15 @@ RSpec.describe "メッセージ投稿機能", type: :system do
       visit room_messages_path(@room_student.room)
 
       # 値をテキストフォー  ムに入力する
-      fill_in "content",with:"こんにちは"
+      fill_in 'content', with: 'こんにちは'
       # 送信した値がDBに保存されていることを確認
-      expect{
+      expect  do
         find('input[name = "commit"]').click
-      }.to change{Message.count}.by(1)
+      end.to change { Message.count }.by(1)
       # チャットルームに遷移していることを確認
       expect(current_path).to eq room_messages_path(@room_student.room)
       # 送信したメッセージがブラウザに反映されていることを確認
-      expect(page).to have_content("こんにちは")
+      expect(page).to have_content('こんにちは')
     end
 
     it '画像の投稿が上手くいくと、チャットルームに遷移して、投稿した画像が表示されている' do
@@ -51,16 +51,15 @@ RSpec.describe "メッセージ投稿機能", type: :system do
 
       # 画像選択フォームに画像を添付する
       image_path = Rails.root.join('public/images/piano.png')
-      attach_file('message[image]',image_path,make_visible: true)
+      attach_file('message[image]', image_path, make_visible: true)
       # 送信した値がDBに保存されていることを確認
-      expect{
+      expect do
         find('input[name= "commit"]').click
-      }.to change{Message.count}.by(1)
+      end.to change { Message.count }.by(1)
       # チャットルームに遷移していることを確認
       expect(current_path).to eq room_messages_path(@room_student.room)
       # 送信した画像がブラウザに表示されていることを確認
-      expect(page).to have_selector("img")
-
+      expect(page).to have_selector('img')
     end
 
     it 'テキストと画像の投稿に成功すること' do
@@ -72,18 +71,18 @@ RSpec.describe "メッセージ投稿機能", type: :system do
 
       # 画像選択フォームに画像を添付する
       image_path = Rails.root.join('public/images/piano.png')
-      attach_file('message[image]',image_path,make_visible: true)
+      attach_file('message[image]', image_path, make_visible: true)
       # 値をテキストフォームに入力する
-      fill_in "content",with:"こんにちは"
+      fill_in 'content', with: 'こんにちは'
       # 送信した値がDBに保存されていることを確認
-      expect{
+      expect  do
         find('input[name= "commit"]').click
-      }.to change{Message.count}.by(1)
+      end.to change { Message.count }.by(1)
       # チャットルームに遷移していることを確認
       expect(current_path).to eq room_messages_path(@room_student.room)
       # 送信した画像とメッセージがブラウザに表示されていることを確認
-      expect(page).to have_selector("img")
-      expect(page).to have_content("こんにちは")
+      expect(page).to have_selector('img')
+      expect(page).to have_content('こんにちは')
     end
   end
 end

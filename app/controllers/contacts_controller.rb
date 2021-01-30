@@ -1,16 +1,14 @@
 class ContactsController < ApplicationController
   before_action :authenticate_any!
 
-  
   def index
     @teacher_room = TeacherRoom.find(params[:teacher_room_id])
     @contact = Contact.new
     @contacts = @teacher_room.contacts
   end
 
-
   def create
-    @teacher_room= TeacherRoom.find(params[:teacher_room_id])
+    @teacher_room = TeacherRoom.find(params[:teacher_room_id])
     @contact = Contact.new(contact_params)
     if teacher_signed_in?
       @contact.is_student = false
@@ -19,7 +17,6 @@ class ContactsController < ApplicationController
     end
     @contact.teacher_room_id = @teacher_room.id
 
-   
     if @contact.save
       redirect_to teacher_room_contacts_path(params[:teacher_room_id])
     else
@@ -28,8 +25,9 @@ class ContactsController < ApplicationController
   end
 
   private
-  def contact_params    
-    params.require(:contact).permit(:content,:image)
+
+  def contact_params
+    params.require(:contact).permit(:content, :image)
   end
 
   def authenticate_any!
@@ -37,6 +35,4 @@ class ContactsController < ApplicationController
     elsif authenticate_teacher!
     end
   end
-  
-
 end

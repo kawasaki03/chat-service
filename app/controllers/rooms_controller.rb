@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
 
   def index
   end
-  
+
   def new
     @room = Room.new
   end
@@ -26,6 +26,6 @@ class RoomsController < ApplicationController
   private
 
   def room_params
-    params.require(:room).permit(:name,student_ids: [])
+    params.require(:room).permit(:name, student_ids: [])
   end
 end

@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
-  before_action :authenticate_student!, except:[:index]
-  before_action :authenticate_teacher!, only:[:index]
+  before_action :authenticate_student!, except: [:index]
+  before_action :authenticate_teacher!, only: [:index]
 
   def show
   end
@@ -11,7 +11,7 @@ class StudentsController < ApplicationController
   def update
     if current_student.update(student_params)
       redirect_to rooms_path
-    else 
+    else
       render :edit
     end
   end
@@ -20,9 +20,9 @@ class StudentsController < ApplicationController
     @students = Student.where(teacher_id: current_teacher.id)
   end
 
-
   private
+
   def student_params
-    params.require(:student).permit(:name,:email,:image,:status_message)
+    params.require(:student).permit(:name, :email, :image, :status_message)
   end
 end

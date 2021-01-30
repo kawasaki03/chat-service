@@ -5,75 +5,75 @@ RSpec.describe Teacher, type: :model do
     before do
       @teacher = FactoryBot.build(:teacher)
       @teacher.image = nil
-      @teacher.status_message = ""
+      @teacher.status_message = ''
     end
 
     context '新規登録ができる時' do
-      it "id,name,email,password,passwordconfirmationが存在すれば登録できること" do
-      expect(@teacher).to be_valid
+      it 'id,name,email,password,passwordconfirmationが存在すれば登録できること' do
+        expect(@teacher).to be_valid
       end
     end
 
     context '新規登録ができない時' do
       it 'nameが空では登録できないこと' do
-        @teacher.name = ""
+        @teacher.name = ''
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("名前を入力してください")
+        expect(@teacher.errors.full_messages).to include('名前を入力してください')
       end
       it 'eamilが空では登録できないこと' do
-        @teacher.email = ""
+        @teacher.email = ''
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("メールアドレスを入力してください")
+        expect(@teacher.errors.full_messages).to include('メールアドレスを入力してください')
       end
       it 'eamilに@が含まれていないと登録できないこと' do
-        @teacher.email = "1122"
+        @teacher.email = '1122'
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("メールアドレスは不正な値です")
+        expect(@teacher.errors.full_messages).to include('メールアドレスは不正な値です')
       end
       it '講師IDが空では登録できないこと' do
-        @teacher.id = ""
+        @teacher.id = ''
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("講師IDは半角の英字・数字を両方含んでください")
+        expect(@teacher.errors.full_messages).to include('講師IDは半角の英字・数字を両方含んでください')
       end
       it '講師IDが7文字以下では登録できないこと' do
-        @teacher.id = "abcd123"
+        @teacher.id = 'abcd123'
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("講師IDは8文字以上で入力してください")
+        expect(@teacher.errors.full_messages).to include('講師IDは8文字以上で入力してください')
       end
       it '講師IDが数字のみでは登録できないこと' do
-        @teacher.id = "12345678"
+        @teacher.id = '12345678'
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("講師IDは半角の英字・数字を両方含んでください")
+        expect(@teacher.errors.full_messages).to include('講師IDは半角の英字・数字を両方含んでください')
       end
       it 'passwordが英字のみでは登録できないこと' do
-        @teacher.id = "abcdefgh"
+        @teacher.id = 'abcdefgh'
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("講師IDは半角の英字・数字を両方含んでください")
+        expect(@teacher.errors.full_messages).to include('講師IDは半角の英字・数字を両方含んでください')
       end
       it 'passwordが空では登録できないこと' do
-        @teacher.password = ""
+        @teacher.password = ''
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("パスワードを入力してください")
+        expect(@teacher.errors.full_messages).to include('パスワードを入力してください')
       end
       it 'passwordが7文字以下では登録できないこと' do
-        @teacher.password = "abcd123"
+        @teacher.password = 'abcd123'
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("パスワードは8文字以上で入力してください")
+        expect(@teacher.errors.full_messages).to include('パスワードは8文字以上で入力してください')
       end
       it 'passwordが数字のみでは登録できないこと' do
-        @teacher.password = "12345678"
+        @teacher.password = '12345678'
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("パスワードは半角の英字・数字を両方含んでください")
+        expect(@teacher.errors.full_messages).to include('パスワードは半角の英字・数字を両方含んでください')
       end
       it 'passwordが英字のみでは登録できないこと' do
-        @teacher.password = "abcdefgh"
+        @teacher.password = 'abcdefgh'
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("パスワードは半角の英字・数字を両方含んでください")
+        expect(@teacher.errors.full_messages).to include('パスワードは半角の英字・数字を両方含んでください')
       end
       it 'passwordとpasswordconfirmationが不一致では登録できないこと' do
-        @teacher.password_confirmation = "a"
+        @teacher.password_confirmation = 'a'
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("確認用パスワードとパスワードの入力が一致しません")
+        expect(@teacher.errors.full_messages).to include('確認用パスワードとパスワードの入力が一致しません')
       end
     end
   end
@@ -83,14 +83,14 @@ RSpec.describe Teacher, type: :model do
     end
     context 'アップデートができる時' do
       it 'image,status_messageが存在すれば登録できること' do
-       expect(@teacher).to be_valid
+        expect(@teacher).to be_valid
       end
     end
     context 'アップデートができない時' do
       it 'status_messageが50字以上だと登録できないこと' do
-        @teacher.status_message = "こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは"
-       @teacher.valid?
-       expect(@teacher.errors.full_messages).to include("メッセージは50文字以内で入力してください")
+        @teacher.status_message = 'こんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちはこんにちは'
+        @teacher.valid?
+        expect(@teacher.errors.full_messages).to include('メッセージは50文字以内で入力してください')
       end
     end
   end

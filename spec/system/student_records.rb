@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "メモ投稿機能", type: :system do
+RSpec.describe 'メモ投稿機能', type: :system do
   before do
     @student_record = FactoryBot.create(:student_record)
   end
@@ -14,9 +14,9 @@ RSpec.describe "メモ投稿機能", type: :system do
       visit student_records_path(@student_record.student)
 
       # DBに保存されていないことを確認
-      expect{
+      expect do
         find('input[name = "commit"]').click
-      }.not_to change{StudentRecord.count}
+      end.not_to change { StudentRecord.count }
       # 元のページに戻ってくることを確認
       expect(current_path).to eq student_records_path(@student_record.student)
     end
@@ -33,18 +33,16 @@ RSpec.describe "メモ投稿機能", type: :system do
       visit student_records_path(@student_record.student)
 
       # テキストフォームに入力する
-      fill_in "title",with:"こんにちは"
-      fill_in "note",with:"こんにちは"
+      fill_in 'title', with: 'こんにちは'
+      fill_in 'note', with: 'こんにちは'
       # 送った値がデータベースに保存されていることを確認
-      expect{
+      expect  do
         find('input[name = "commit"]').click
-      }.to change{StudentRecord.count}.by(1)
+      end.to change { StudentRecord.count }.by(1)
       # レッスンメモページに遷移していることを確認
       expect(current_path).to eq student_records_path(@student_record.student)
       # 送信したメッセージがブラウザに反映されていることを確認
-      expect(page).to have_content("こんにちは")
+      expect(page).to have_content('こんにちは')
     end
-
-  
   end
 end
