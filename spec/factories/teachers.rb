@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :teacher do
-    id = 'a' + '1' + Faker::Internet.password(min_length: 8)
-    id {id}
+    id {'b' + '2' + Faker::Internet.password(min_length: 8)}
     name {Faker::Name.last_name}
     email {Faker::Internet.free_email}
     password = 'a' + '1' + Faker::Internet.password(min_length: 8)
