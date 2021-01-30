@@ -8,8 +8,8 @@ FactoryBot.define do
     password_confirmation {password}
     status_message {Faker::Lorem.sentence}
   
-  after(:build) do |teacher|
-    teacher.image.attach(io: File.open('public/images/piano.png'), filename: 'piano.png')
-  end
+  # after(:build) do |teacher|
+  #   teacher.image.attach(io: File.open('public/images/piano.png'), filename: 'piano.png')
+  # end
 end
 end
