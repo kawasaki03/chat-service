@@ -10,9 +10,11 @@
           <%=contact.created_at.strftime("%Y年%m月%d日%H時%M分") %>
         </div>
       </div>
+       <%if contact.content != ""%>
       <div class="text">
         <%=simple_format(contact.content)%>
       </div>
+      <%end%>
       <div class='message-image'>
       <%=image_tag contact.image.variant(resize: '300x300'), class: 'message-img' if contact.image.attached?%>
       </div>
@@ -32,9 +34,11 @@
           <%= contact.created_at.strftime("%Y年%m月%d日%H時%M分")%>
         </div>
       </div>
+      <%if contact.content != ""%>
       <div class="text">
         <%=simple_format(contact.content)%>
       </div>
+      <%end%>
       <div class='message-image'>
       <%=image_tag contact.image.variant(resize: '300x300'), class: 'message-img' if contact.image.attached? %>
       </div>
@@ -56,9 +60,11 @@
           <%= contact.created_at.strftime("%Y年%m月%d日%H時%M分")%>
         </div>
       </div>
+      <%if contact.content != ""%>
       <div class="text">
         <%=simple_format(contact.content)%>
       </div>
+      <%end%>
       <div class='message-image'>
       <%=image_tag contact.image.variant(resize: '300x300'), class: 'message-img' if contact.image.attached?%>
       </div>
@@ -76,9 +82,11 @@
           <%=contact.created_at.strftime("%Y年%m月%d日%H時%M分") %>
         </div>
       </div>
+      <%if contact.content != ""%>
       <div class="text">
-       <%=simple_format(contact.content)%>
+        <%=simple_format(contact.content)%>
       </div>
+      <%end%>
       <div class='message-image'>
       <%=image_tag contact.image.variant(resize: '300x300'), class: 'message-img' if contact.image.attached?%>
       </div>
