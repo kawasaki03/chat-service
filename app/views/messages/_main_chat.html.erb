@@ -21,7 +21,7 @@
       <span class="image-file"><i class="fas fa-paperclip"></i></span>
       <%= f.file_field :image, class:"hidden" %>
       </label>
-      <%= f.text_area :content, class:"form-message" , placeholder:"type a message"%>
+      <%= f.text_area :content, class:"form-message" , placeholder:"type a message",id: "content"%>
     </div>
     <%=f.submit "送信", class:"form-submit"%>
   <%end%>
