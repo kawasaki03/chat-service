@@ -44,7 +44,7 @@ https://connect-classes.herokuapp.com/
 
 ## 実装した機能の詳細
 ### <先生側>
-####ユーザー登録機能
+#### ユーザー登録機能
 |新規登録画面| ログイン画面 |
 | ---------|------------|
 |<img width="500" alt="講師新規登録ページ" src="https://user-images.githubusercontent.com/70197964/106920960-e1e62b00-674e-11eb-8675-fbc830f77fbf.png">|<img width="500" alt="講師ログインページ" src="https://user-images.githubusercontent.com/70197964/106921031-f1657400-674e-11eb-8b0d-0e4dab24f2ee.png">|
@@ -58,7 +58,7 @@ https://connect-classes.herokuapp.com/
 
 
 ### <生徒側>
-#### ユーザー登録機能
+#### ユーザー新規登録機能
 |新規登録画面| ログイン画面 |
 | ---------|------------|
 |<img width="500" alt="生徒新規登録ページ" src="https://user-images.githubusercontent.com/70197964/106922101-0a225980-6750-11eb-82d7-bd7b162cb333.png">| <img width="500" alt="生徒ログインページ" src="https://user-images.githubusercontent.com/70197964/106922150-160e1b80-6750-11eb-94ee-66a46a40fea6.png">|
