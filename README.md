@@ -47,12 +47,12 @@ https://connect-classes.herokuapp.com/
 ####ユーザー登録機能
 |新規登録画面| ログイン画面 |
 | ---------|------------|
-|https://user-images.githubusercontent.com/70197964/106920960-e1e62b00-674e-11eb-8675-fbc830f77fbf.png|https://user-images.githubusercontent.com/70197964/106921031-f1657400-674e-11eb-8b0d-0e4dab24f2ee.png|
+|<img width="500" alt="講師新規登録ページ" src="https://user-images.githubusercontent.com/70197964/106920960-e1e62b00-674e-11eb-8675-fbc830f77fbf.png">|<img width="500" alt="講師ログインページ" src="https://user-images.githubusercontent.com/70197964/106921031-f1657400-674e-11eb-8b0d-0e4dab24f2ee.png">|
 
 ####生徒管理機能
 |生徒情報一覧 | 指導記録ページ |
 | ---------|------------|
-|https://user-images.githubusercontent.com/70197964/106923282-41453a80-6751-11eb-9ad7-601b56e81ff2.png| https://user-images.githubusercontent.com/70197964/106923538-84071280-6751-11eb-80cf-77ce19e884e7.png|
+|<img width="500" alt="生徒情報一覧" src="https://user-images.githubusercontent.com/70197964/106923282-41453a80-6751-11eb-9ad7-601b56e81ff2.png">| <img width="500" alt="レッスン記録" src="https://user-images.githubusercontent.com/70197964/106923538-84071280-6751-11eb-80cf-77ce19e884e7.png">|
 *生徒情報一覧からレッスン記録を確認したい生徒様のお名前をクリックすると、生徒様個人のレッスンの指導記録ページに遷移することができます。
 
 
@@ -60,30 +60,32 @@ https://connect-classes.herokuapp.com/
 #### ユーザー登録機能
 |新規登録画面| ログイン画面 |
 | ---------|------------|
-|https://user-images.githubusercontent.com/70197964/106922101-0a225980-6750-11eb-82d7-bd7b162cb333.png| https://user-images.githubusercontent.com/70197964/106922150-160e1b80-6750-11eb-94ee-66a46a40fea6.png|
+|<img width="500" alt="生徒新規登録ページ" src="https://user-images.githubusercontent.com/70197964/106922101-0a225980-6750-11eb-82d7-bd7b162cb333.png">| <img width="500" alt="生徒ログインページ" src="https://user-images.githubusercontent.com/70197964/106922150-160e1b80-6750-11eb-94ee-66a46a40fea6.png">|
 
 ###＜先生、生徒共通＞
 #### チャット機能
 |チャット画面| 新規チャット作成画面 |
 | ---------|------------|
-|https://user-images.githubusercontent.com/70197964/106924550-8453dd80-6752-11eb-9f20-4754ade0a099.png | https://user-images.githubusercontent.com/70197964/106924944-f3c9cd00-6752-11eb-8106-5db30ee33280.png |
+|<img width="500" alt="講師チャット画面" src="https://user-images.githubusercontent.com/70197964/106924550-8453dd80-6752-11eb-9f20-4754ade0a099.png"> | <img width="500" alt="チャットルーム作成画面" src="https://user-images.githubusercontent.com/70197964/106924944-f3c9cd00-6752-11eb-8106-5db30ee33280.png">|
+
 ※生徒様の場合、ヘッダーの"students"をクリックすると同じ門下の生徒様同士でのやりとりができるチャットページに、"teacher"をクリックすると先生とのやりとりができるチャットページに遷移します。
 
 #### ユーザーの詳細表示/編集機能
 |ユーザー詳細ページ| ユーザー編集ページ |
 | ---------|------------|
-|https://user-images.githubusercontent.com/70197964/106926598-98004380-6754-11eb-825b-de9c7c525171.png|https://user-images.githubusercontent.com/70197964/106926770-c8e07880-6754-11eb-9975-299a669054d5.png|
+|<img width="500" alt="詳細ページ" src="https://user-images.githubusercontent.com/70197964/106926598-98004380-6754-11eb-825b-de9c7c525171.png">|<img width="500" alt="編集ページ" src="https://user-images.githubusercontent.com/70197964/106926770-c8e07880-6754-11eb-9975-299a669054d5.png">|
 ※プロフィール画像と一言メッセージ（50字以内）を設定することが可能です。
 
 #### トップページ
-https://user-images.githubusercontent.com/70197964/106928426-8324af80-6756-11eb-839f-4abd59162a2a.jpg
+![トップページ](https://user-images.githubusercontent.com/70197964/106928426-8324af80-6756-11eb-839f-4abd59162a2a.jpg)
 
 ## 実装予定の機能
 - 生徒用アカウントの非公開機能
 - レスポンシブ対応
 
 ## データベース設計
-https://user-images.githubusercontent.com/70197964/106929328-94ba8700-6757-11eb-8780-df03e442b3b6.png
+<img width="733" alt="er" src="https://user-images.githubusercontent.com/70197964/106929328-94ba8700-6757-11eb-8780-df03e442b3b6.png">
+
 
 
 
