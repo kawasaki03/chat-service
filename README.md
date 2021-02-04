@@ -1,104 +1,91 @@
-# README
+# コネクト
+## アプリケーション概要
+音楽レッスンを受け持っている先生向けのチャットアプリケーションです。連絡先を交換しなくても、先生と生徒様間、そして生徒様同士の連絡のやりとりが簡単にできます。
+また、先生向けの機能として、レッスンでの指導内容を記録できる機能も実装いたしました。
 
-#テーブル設計
-
-## students テーブル
-
-| Column    | Type      | Options     |
-| --------- | --------- | ----------- |
-| name      | string    | null: false |
-| email     | string    | null: false |
-| password  | string    | null: false |
-| teacher_id  | references| foreign_key:true |
-
-### Association
-
-- has_many :room_students
-- has_many :rooms,through: room_students
-- has_many :massages
-- belongs_to :teacher
-- has_one :teacher_room
-- has_many :contacts
+## 開発環境
+- Ruby(2.6.5)
+- Ruby on Rails(6.0.3.4)
+- HTML/CSS
+- AWS(S3)
+- Heroku(7.47.7)
+- MySQL(Ver 14.14 Distrib 5.6.47)
 
 
+## URL
+https://connect-classes.herokuapp.com/
 
-## rooms テーブル
+## テスト用アカウント
+#### 講師用
+メールアドレス：test@gmail.com
+パスワード：teacher0
 
-| Column    | Type      | Options     |
-| --------- | --------- | ----------- |
-| name      | string    | null: false |
+#### 生徒用
+メースアドレス：test1@gmail.com
+パスワード：student0
 
-### Association
+## 利用方法
+まずは先生が会員登録をした後、設定した「講師ID(任意の文字列)」を生徒様に伝え、生徒会員登録をしていただくことで、先生と生徒様間でのチャット形式による連絡のやり取りが可能になります。複数人の生徒様に会員登録をしていただくと、その生徒様間でのやり取りも可能です。
 
-- has_many :room_students
-- has_many :students,through: room_students
-- has_many :massages
+## 目指した課題解決
+ユーザーは個人経営の教室を開かれている先生と、その教室に通われている生徒様を想定いたしました。
+目指した課題解決は2点ございます。
 
+- 突然のレッスンの休講や、時間変更をしなければいけない場合に備えて、先生と生徒様間での連絡先の交換は必要不可欠かと思われます。しかし、プライバシー保護の観点から、直接の連絡先の交換を避けたい方もいらっしゃるのではないかと考えてこのアプリケーションを開発いたしました。
+  また、コロナウイルスの感染拡大防止のため、思うように対面で会うことが叶わない今の状況を考え、生徒様にとって「<strong>同じ先生に習っている（同じ趣味を持っている）仲間と、手軽に繋がることができるアプリケーション</strong>」としての機能も果たせれば、と思い、実装を進めました。
 
-## room_students テーブル
+- 多くの生徒様を抱える先生にとって、一人一人のレッスンの指導内容を全て記憶しておくことは困難だと考えました。そこで、<strong>会員登録をしていただいた生徒様の一覧を見ることができる機能</strong>と、<strong>一人一人のレッスンの進捗を記録できる機能</strong>を実装いたしました。「手書きの指導用ノートを作るよりも、もっと楽に記録でき、見やすいレイアウトにする」という点を意識しました。
 
-| Column    | Type      | Options     |
-| --------- | --------- | ----------- |
-| student_id   | references| null: false,foreign_key:true |
-| room_id   | references| null: false,foreign_key:true |
+## 洗い出した要件
 
-### Association
-- has_many :students
-- has_many :rooms
+- 連絡先を交換することなく、コミュニケーションを取りたい。
+- 生徒情報を一括で見れる機能が欲しい。
+- レッスンで指導した内容を把握しておきたい。
 
+## 実装した機能の詳細
+### <先生側>
+####ユーザー登録機能
+|新規登録画面| ログイン画面 |
+| ---------|------------|
+|https://user-images.githubusercontent.com/70197964/106920960-e1e62b00-674e-11eb-8675-fbc830f77fbf.png|https://user-images.githubusercontent.com/70197964/106921031-f1657400-674e-11eb-8b0d-0e4dab24f2ee.png|
 
-## messages テーブル
-
-| Column    | Type      | Options     |
-| --------- | --------- | ----------- |
-| content   | string    | null: false |
-| checked   | boolean   | null: false |
-| student      | references    | null: false,foreign_key:true |
-| room      | references    | null: false,foreign_key:true |
-
-### Association
-- belongs_to :rooms
-- belongs_to :students
-
-
-## teachersテーブル
-| Column    | Type      | Options     |
-| --------- | --------- | ----------- |
-| name      | string    | null: false |
-| email     | string    | null: false |
-| password  | string    | null: false |
-
-### Association
-
-- has_many :students
-- has_many :teacher_rooms
-- has_many :contacts
+####生徒管理機能
+|生徒情報一覧 | 指導記録ページ |
+| ---------|------------|
+|https://user-images.githubusercontent.com/70197964/106923282-41453a80-6751-11eb-9ad7-601b56e81ff2.png| https://user-images.githubusercontent.com/70197964/106923538-84071280-6751-11eb-80cf-77ce19e884e7.png|
+*生徒情報一覧からレッスン記録を確認したい生徒様のお名前をクリックすると、生徒様個人のレッスンの指導記録ページに遷移することができます。
 
 
-## teacher_roomsテーブル
-| Column    | Type      | Options     |
-| --------- | --------- | ----------- |
-| name      | string    | null: false |
-| student_id   | references| null: false,foreign_key: true, |
-| teacher_id  | references| null: false,foreign_key: true, |
+###<生徒側>
+#### ユーザー登録機能
+|新規登録画面| ログイン画面 |
+| ---------|------------|
+|https://user-images.githubusercontent.com/70197964/106922101-0a225980-6750-11eb-82d7-bd7b162cb333.png| https://user-images.githubusercontent.com/70197964/106922150-160e1b80-6750-11eb-94ee-66a46a40fea6.png|
 
-### Association
+###＜先生、生徒共通＞
+#### チャット機能
+|チャット画面| 新規チャット作成画面 |
+| ---------|------------|
+|https://user-images.githubusercontent.com/70197964/106924550-8453dd80-6752-11eb-9f20-4754ade0a099.png | https://user-images.githubusercontent.com/70197964/106924944-f3c9cd00-6752-11eb-8106-5db30ee33280.png |
+※生徒様の場合、ヘッダーの"students"をクリックすると同じ門下の生徒様同士でのやりとりができるチャットページに、"teacher"をクリックすると先生とのやりとりができるチャットページに遷移します。
 
-- belongs_to :student
-- belongs_to :teacher
-- has_many :contacts
+#### ユーザーの詳細表示/編集機能
+|ユーザー詳細ページ| ユーザー編集ページ |
+| ---------|------------|
+|https://user-images.githubusercontent.com/70197964/106926598-98004380-6754-11eb-825b-de9c7c525171.png|https://user-images.githubusercontent.com/70197964/106926770-c8e07880-6754-11eb-9975-299a669054d5.png|
+※プロフィール画像と一言メッセージ（50字以内）を設定することが可能です。
+
+#### トップページ
+https://user-images.githubusercontent.com/70197964/106928426-8324af80-6756-11eb-839f-4abd59162a2a.jpg
+
+## 実装予定の機能
+- 生徒用アカウントの非公開機能
+- レスポンシブ対応
+
+## データベース設計
+https://user-images.githubusercontent.com/70197964/106929328-94ba8700-6757-11eb-8780-df03e442b3b6.png
 
 
-## contactsテーブル
-| Column    | Type      | Options     |
-| --------- | --------- | ----------- |
-| content   | string    | null: false |
-| student_id   | references| foreign_key: true|
-| teacher_id  | references| foreign_key: true|
-| teacher_room_id  | references| null: false,foreign_key: true|
 
-### Association
 
-- belongs_to :student
-- belongs_to :teacher
-- belongs_to :teacher_room
+
