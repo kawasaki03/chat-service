@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ChatService</title>
+    <title>コネクト</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -77,6 +78,19 @@
                <%=link_to "ログイン",new_teacher_session_path,class:"link-li__logout"%>
                <%=link_to "新規登録",new_teacher_registration_path,class:"link-li__logout"%>
          </div>
+         <i class="fas fa-bars" id = "fa-bars"></i>
+      </div>
+      <div class = header-bar__pulldown id = "header-pulldown">
+      <ul>
+         <li>生徒さん用：  
+               <%=link_to "ログイン",new_student_session_path,class:"link-li__logout"%>
+               <%=link_to "新規登録",new_student_registration_path,class:"link-li__logout"%><span class="mg-15"></span>
+         </li>
+         <li>講師さん用：  
+               <%=link_to "ログイン",new_teacher_session_path,class:"link-li__logout"%>
+               <%=link_to "新規登録",new_teacher_registration_path,class:"link-li__logout"%>
+         </li>
+       </ul>
       </div>
      <div class= "wrap">
         <%= yield %>
