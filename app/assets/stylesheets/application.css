@@ -320,6 +320,14 @@ font-size: 20px;
  
 @media (max-width: 599px) {
   
+  .header-bar {
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+  .header-bar__right {
+    white-space: nowrap;
+    overflow-x: auto;
+  }
  .header-bar__right{
    display: none;
  }
@@ -339,4 +347,15 @@ font-size: 20px;
    margin-right: 30px;
    display: block;
  }
+
+ .header-bar__pulldown.click{
+  background-color: #f9f4ef;
+  height: 120px;
+  border: 1px solid rgb(82, 78, 78);
+}
+
+.header-bar .fas{
+  font-size: 27px;
+}
+
 }
