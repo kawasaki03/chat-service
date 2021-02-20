@@ -25,6 +25,7 @@
      <%= link_to "編\b\b集", edit_student_path,class: 'logout'%>
      <%= link_to "ログアウト", destroy_student_session_path, method: :delete,class: 'logout'%>
      </div>
+     <%=link_to "＞＞アカウントを削除する", student_registration_path, method: :delete,class: 'destroy_user',data: {confirm: "本当に削除しますか？"}  %>
 </div>
 </div>
 </div>

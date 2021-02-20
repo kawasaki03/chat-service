@@ -229,6 +229,17 @@
   transform: translateY(2px);
 }
 
+.destroy_user{
+  padding: 20px 0 0 200px;
+  text-decoration: none;
+  color:#7b5544;
+}
+.destroy_user:hover{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+
 /* student-index */
 .students-index-page {
   margin: 0 100px;
