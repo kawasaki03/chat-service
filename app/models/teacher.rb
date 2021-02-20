@@ -4,7 +4,7 @@ class Teacher < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :students
+  has_many :students,dependent: :destroy
   has_many :teacher_rooms
   validates :name, presence: true
   mount_uploader :image, ImageUploader
