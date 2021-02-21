@@ -15,8 +15,10 @@
           <h1> <%=student.name%>さん</h1>
           <p>メッセージ： <%=student.status_message%></p>
           </div>
+          <div>
          <%=link_to "＞＞詳細ページへ" ,student_records_path(id: student.id),class:"move-show"%>
-           
+         <%=link_to "＞＞非表示にする" ,student_registration_path(id: student.id), method: :delete,class: 'destroy_user',data: {confirm: "非表示にしますか？"} ,class:"move-show delete"%>
+           </div>
         </div>
       <%end%>
     </div>

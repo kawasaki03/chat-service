@@ -269,6 +269,7 @@
 }
 
 .move-show{
+  display: block;
   margin-top: 30px;
   text-align: right;
   font-size: 15px;
@@ -279,6 +280,12 @@
 .move-show:hover {
   font-size: 16px;
   font-weight: bold;
+}
+
+.move-show.delete{
+  color: black;
+  font-size: 12px;
+  padding-top: 20px;
 }
 
 
