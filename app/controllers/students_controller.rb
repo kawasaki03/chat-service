@@ -10,6 +10,7 @@ class StudentsController < ApplicationController
 
   def update
     if current_student.update(student_params)
+      binding.pry
       redirect_to rooms_path
     else
       render :edit
@@ -23,6 +24,6 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:name, :email, :image, :status_message)
+    params.require(:student).permit(:name, :email, :image, :status_message,:key)
   end
 end

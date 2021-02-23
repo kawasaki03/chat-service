@@ -41,6 +41,12 @@
             <%= f.text_area :status_message%>
           </div>
         </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :key, "アカウントを非公開にする"%>
+            <%= f.check_box :key,{}, "true","false"%>
+          </div>
+        </div>
         <div class='actions'>
           <%= f.submit "Update", class: 'btn'%>
         </div>

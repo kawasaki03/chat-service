@@ -14,7 +14,7 @@
         メンバー
         </div>   
          <div class='chat-room-form__field-select'>
-            <%Student.where(teacher_id: current_student.teacher_id).where.not(id: current_student.id).each do |student|%>
+            <%Student.where(teacher_id: current_student.teacher_id,key: false).where.not(id: current_student.id).each do |student|%>
             <div class="chat-member">
              <input type="checkbox" value=<%=student.id%> name= "room[student_ids][]"  > 
              <div class= "chat-member_image">

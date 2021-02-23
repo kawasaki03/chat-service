@@ -18,6 +18,11 @@
       <p>名前： <%=current_student.name%></p>
       <p>メールアドレス： <%=current_student.email%></p>
       <p>メッセージ： <%=current_student.status_message%></p>
+      <%if current_student.key == true%>
+      <p>アカウント： 非公開</p>
+      <%else%>
+      <p>アカウント： 公開</p>
+      <%end%>
       </div>
       </div>
     </div>
